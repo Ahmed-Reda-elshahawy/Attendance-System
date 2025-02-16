@@ -16,14 +16,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="BusinessLayer\" />
-    <Folder Include="UserControls\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="MyConnection.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="BusinessLayer\" />
+    <Folder Include="UserControls\" />
   </ItemGroup>
 
 </Project>
