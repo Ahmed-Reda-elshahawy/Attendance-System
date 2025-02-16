@@ -1,0 +1,3 @@
+{
+  "connection": "Data Source=.;Initial Catalog=Attendance;Integrated Security=True;Trust Server Certificate=True"
+}
