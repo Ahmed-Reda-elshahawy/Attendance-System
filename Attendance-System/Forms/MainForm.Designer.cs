@@ -170,6 +170,7 @@
             btn_atten.TabIndex = 2;
             btn_atten.Text = "Attendance";
             btn_atten.UseVisualStyleBackColor = false;
+            btn_atten.Click += btn_atten_Click;
             // 
             // label1
             // 

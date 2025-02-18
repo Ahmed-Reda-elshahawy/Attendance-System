@@ -1,4 +1,5 @@
-﻿using Attendance_System.UserControls;
+﻿using Attendance;
+using Attendance_System.UserControls;
 using Report;
 using System;
 using System.Collections.Generic;
@@ -16,24 +17,29 @@ namespace Attendance_System.Forms
     {
         DashboardControl dashboardControl = new DashboardControl();
         UserControlReportAttendance userControlReportAttendance = new UserControlReportAttendance();
+        usercontrolAttendance usercontrolAttendance = new usercontrolAttendance();
         public MainForm()
         {
             InitializeComponent();
             // Add controls to the form
             dashboardControl.Dock = DockStyle.Fill;
             userControlReportAttendance.Dock = DockStyle.Fill;
+            usercontrolAttendance.Dock = DockStyle.Fill;
 
             p_main.Controls.Add(userControlReportAttendance);
+            p_main.Controls.Add(usercontrolAttendance);
             p_main.Controls.Add(dashboardControl);
 
             // Set initial visibility
             dashboardControl.Visible = true;
             userControlReportAttendance.Visible = false;
+            usercontrolAttendance.Visible = false;
         }
 
         private void btn_report_Click(object sender, EventArgs e)
         {
             dashboardControl.Visible = false;
+            usercontrolAttendance.Visible = false;
             userControlReportAttendance.Visible = true;
         }
 
@@ -46,8 +52,16 @@ namespace Attendance_System.Forms
 
         private void btn_dash_Click(object sender, EventArgs e)
         {
-            dashboardControl.Visible = true;
             userControlReportAttendance.Visible = false;
+            usercontrolAttendance.Visible = false;
+            dashboardControl.Visible = true;
+        }
+
+        private void btn_atten_Click(object sender, EventArgs e)
+        {
+            dashboardControl.Visible = false;
+            userControlReportAttendance.Visible = false;
+            usercontrolAttendance.Visible = true;
         }
     }
 }

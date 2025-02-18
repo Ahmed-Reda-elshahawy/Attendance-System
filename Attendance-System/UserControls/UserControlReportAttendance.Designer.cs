@@ -209,11 +209,11 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Century Gothic", 13.8F);
             label3.Location = new Point(513, 97);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(65, 19);
+            label3.Size = new Size(90, 27);
             label3.TabIndex = 7;
             label3.Text = "Group:";
             // 
@@ -287,11 +287,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Century Gothic", 13.8F);
             label2.Location = new Point(66, 90);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(52, 19);
+            label2.Size = new Size(74, 27);
             label2.TabIndex = 1;
             label2.Text = "Date:";
             // 
