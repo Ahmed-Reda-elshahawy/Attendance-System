@@ -22,16 +22,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="BusinessLayer\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="UserControls\UserControlReportAttendance.cs">
+    <Compile Update="PresentationLayer\UserControls\UserControlReportAttendance.cs">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>
