@@ -89,15 +89,15 @@
             // tabControlReport
             // 
             tabControlReport.Alignment = TabAlignment.Bottom;
-            tabControlReport.Anchor = AnchorStyles.None;
             tabControlReport.Controls.Add(tabPageMarkAttendance);
             tabControlReport.Controls.Add(tabPage1);
+            tabControlReport.Dock = DockStyle.Fill;
             tabControlReport.Font = new Font("Tahoma", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tabControlReport.Location = new Point(155, 22);
-            tabControlReport.Margin = new Padding(4);
+            tabControlReport.Location = new Point(0, 0);
+            tabControlReport.Margin = new Padding(0);
             tabControlReport.Name = "tabControlReport";
             tabControlReport.SelectedIndex = 0;
-            tabControlReport.Size = new Size(1173, 513);
+            tabControlReport.Size = new Size(1482, 720);
             tabControlReport.TabIndex = 1;
             // 
             // tabPageMarkAttendance
@@ -117,7 +117,7 @@
             tabPageMarkAttendance.Margin = new Padding(4);
             tabPageMarkAttendance.Name = "tabPageMarkAttendance";
             tabPageMarkAttendance.Padding = new Padding(4);
-            tabPageMarkAttendance.Size = new Size(1165, 472);
+            tabPageMarkAttendance.Size = new Size(1474, 679);
             tabPageMarkAttendance.TabIndex = 0;
             tabPageMarkAttendance.Text = "Group Report";
             tabPageMarkAttendance.UseVisualStyleBackColor = true;
@@ -126,7 +126,7 @@
             // 
             pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1104, 8);
+            pictureBox1.Location = new Point(1414, 8);
             pictureBox1.Margin = new Padding(4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(52, 53);
@@ -144,11 +144,11 @@
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column2, Column6, Column3, Column4, Column5 });
-            dataGridView1.Location = new Point(58, 161);
+            dataGridView1.Location = new Point(58, 190);
             dataGridView1.Margin = new Padding(4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1098, 303);
+            dataGridView1.Size = new Size(1408, 65);
             dataGridView1.TabIndex = 10;
             // 
             // Column2
@@ -189,7 +189,7 @@
             // panel6
             // 
             panel6.BackColor = Color.Transparent;
-            panel6.Location = new Point(680, 132);
+            panel6.Location = new Point(517, 168);
             panel6.Margin = new Padding(4);
             panel6.Name = "panel6";
             panel6.Size = new Size(351, 3);
@@ -200,7 +200,7 @@
             comboBoxClass.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxClass.FlatStyle = FlatStyle.Flat;
             comboBoxClass.FormattingEnabled = true;
-            comboBoxClass.Location = new Point(680, 97);
+            comboBoxClass.Location = new Point(517, 133);
             comboBoxClass.Margin = new Padding(4);
             comboBoxClass.Name = "comboBoxClass";
             comboBoxClass.Size = new Size(349, 36);
@@ -210,7 +210,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(676, 61);
+            label3.Location = new Point(513, 97);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(65, 19);
@@ -220,7 +220,7 @@
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.BackColor = Color.LightGray;
-            flowLayoutPanel1.Location = new Point(143, 132);
+            flowLayoutPanel1.Location = new Point(70, 161);
             flowLayoutPanel1.Margin = new Padding(4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(351, 3);
@@ -231,7 +231,7 @@
             panel3.BackColor = Color.Transparent;
             panel3.Controls.Add(panel5);
             panel3.Controls.Add(dateTimePicker1);
-            panel3.Location = new Point(131, 97);
+            panel3.Location = new Point(58, 126);
             panel3.Margin = new Padding(4);
             panel3.Name = "panel3";
             panel3.Size = new Size(374, 31);
@@ -259,7 +259,7 @@
             // panel2
             // 
             panel2.BackColor = Color.Transparent;
-            panel2.Location = new Point(143, 127);
+            panel2.Location = new Point(70, 156);
             panel2.Margin = new Padding(4);
             panel2.Name = "panel2";
             panel2.Size = new Size(351, 13);
@@ -269,7 +269,7 @@
             // 
             panel1.BackColor = Color.Transparent;
             panel1.Controls.Add(panel4);
-            panel1.Location = new Point(143, 87);
+            panel1.Location = new Point(70, 116);
             panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
             panel1.Size = new Size(351, 13);
@@ -288,7 +288,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(139, 61);
+            label2.Location = new Point(66, 90);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(52, 19);
@@ -299,12 +299,12 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(67, 31, 125);
+            label1.Font = new Font("Century Gothic", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.RoyalBlue;
             label1.Location = new Point(4, 4);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(152, 23);
+            label1.Size = new Size(227, 38);
             label1.TabIndex = 0;
             label1.Text = "Group Report: ";
             // 
@@ -328,7 +328,7 @@
             tabPage1.Margin = new Padding(4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(4);
-            tabPage1.Size = new Size(1165, 472);
+            tabPage1.Size = new Size(1474, 679);
             tabPage1.TabIndex = 1;
             tabPage1.Text = "Student Report";
             tabPage1.UseVisualStyleBackColor = true;
@@ -337,7 +337,7 @@
             // 
             pictureBoxPrint.Cursor = Cursors.Hand;
             pictureBoxPrint.Image = (Image)resources.GetObject("pictureBoxPrint.Image");
-            pictureBoxPrint.Location = new Point(1108, 4);
+            pictureBoxPrint.Location = new Point(1414, 8);
             pictureBoxPrint.Margin = new Padding(4);
             pictureBoxPrint.Name = "pictureBoxPrint";
             pictureBoxPrint.Size = new Size(52, 53);
@@ -348,7 +348,7 @@
             // panel8
             // 
             panel8.BackColor = Color.Transparent;
-            panel8.Location = new Point(864, 136);
+            panel8.Location = new Point(847, 166);
             panel8.Margin = new Padding(4);
             panel8.Name = "panel8";
             panel8.Size = new Size(267, 3);
@@ -360,7 +360,7 @@
             comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox2.FlatStyle = FlatStyle.Flat;
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(864, 101);
+            comboBox2.Location = new Point(847, 131);
             comboBox2.Margin = new Padding(4);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(267, 36);
@@ -372,7 +372,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.RoyalBlue;
-            label5.Location = new Point(859, 65);
+            label5.Location = new Point(842, 95);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(144, 19);
@@ -390,11 +390,11 @@
             dataGridView2.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5 });
-            dataGridView2.Location = new Point(62, 161);
+            dataGridView2.Location = new Point(62, 191);
             dataGridView2.Margin = new Padding(4);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(1098, 303);
+            dataGridView2.Size = new Size(1404, 65);
             dataGridView2.TabIndex = 23;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
@@ -436,7 +436,7 @@
             // panel9
             // 
             panel9.BackColor = Color.Transparent;
-            panel9.Location = new Point(494, 132);
+            panel9.Location = new Point(469, 162);
             panel9.Margin = new Padding(4);
             panel9.Name = "panel9";
             panel9.Size = new Size(351, 3);
@@ -448,7 +448,7 @@
             comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox3.FlatStyle = FlatStyle.Flat;
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(494, 97);
+            comboBox3.Location = new Point(469, 127);
             comboBox3.Margin = new Padding(4);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(349, 36);
@@ -460,7 +460,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.RoyalBlue;
-            label6.Location = new Point(490, 61);
+            label6.Location = new Point(465, 91);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(65, 19);
@@ -471,7 +471,7 @@
             // flowLayoutPanel2
             // 
             flowLayoutPanel2.BackColor = Color.LightGray;
-            flowLayoutPanel2.Location = new Point(88, 132);
+            flowLayoutPanel2.Location = new Point(71, 162);
             flowLayoutPanel2.Margin = new Padding(4);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(351, 3);
@@ -483,7 +483,7 @@
             panel10.BackColor = Color.Transparent;
             panel10.Controls.Add(panel11);
             panel10.Controls.Add(dateTimePicker2);
-            panel10.Location = new Point(77, 97);
+            panel10.Location = new Point(60, 127);
             panel10.Margin = new Padding(4);
             panel10.Name = "panel10";
             panel10.Size = new Size(374, 31);
@@ -512,7 +512,7 @@
             // panel12
             // 
             panel12.BackColor = Color.Transparent;
-            panel12.Location = new Point(88, 127);
+            panel12.Location = new Point(71, 157);
             panel12.Margin = new Padding(4);
             panel12.Name = "panel12";
             panel12.Size = new Size(351, 13);
@@ -523,7 +523,7 @@
             // 
             panel13.BackColor = Color.Transparent;
             panel13.Controls.Add(panel14);
-            panel13.Location = new Point(88, 87);
+            panel13.Location = new Point(71, 117);
             panel13.Margin = new Padding(4);
             panel13.Name = "panel13";
             panel13.Size = new Size(351, 13);
@@ -544,7 +544,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.RoyalBlue;
-            label7.Location = new Point(84, 61);
+            label7.Location = new Point(67, 91);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new Size(52, 19);
@@ -556,12 +556,12 @@
             // 
             label8.AutoSize = true;
             label8.BackColor = Color.Transparent;
-            label8.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Font = new Font("Century Gothic", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.RoyalBlue;
             label8.Location = new Point(7, 4);
             label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
-            label8.Size = new Size(152, 23);
+            label8.Size = new Size(227, 38);
             label8.TabIndex = 14;
             label8.Text = "Group Report: ";
             label8.Click += label8_Click;
@@ -576,7 +576,7 @@
             ForeColor = Color.RoyalBlue;
             Margin = new Padding(6, 5, 6, 5);
             Name = "UserControlReportAttendance";
-            Size = new Size(1537, 724);
+            Size = new Size(1482, 720);
             tabControlReport.ResumeLayout(false);
             tabPageMarkAttendance.ResumeLayout(false);
             tabPageMarkAttendance.PerformLayout();

@@ -23,8 +23,8 @@ namespace Attendance_System.Forms
             dashboardControl.Dock = DockStyle.Fill;
             userControlReportAttendance.Dock = DockStyle.Fill;
 
-            this.Controls.Add(dashboardControl);
-            this.Controls.Add(userControlReportAttendance);
+            p_main.Controls.Add(userControlReportAttendance);
+            p_main.Controls.Add(dashboardControl);
 
             // Set initial visibility
             dashboardControl.Visible = true;
@@ -39,7 +39,9 @@ namespace Attendance_System.Forms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            //// Ensure buttons are wired up correctly
+            //btn_report.Click += btn_report_Click;
+            //btn_dash.Click += btn_dash_Click;
         }
 
         private void btn_dash_Click(object sender, EventArgs e)

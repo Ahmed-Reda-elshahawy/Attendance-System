@@ -41,6 +41,8 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.BackColor = Color.WhiteSmoke;
+            pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(163, 81);
             pictureBox1.Margin = new Padding(7, 5, 7, 5);
@@ -52,6 +54,8 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.BackColor = Color.WhiteSmoke;
+            pictureBox2.Cursor = Cursors.Hand;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(836, 81);
             pictureBox2.Margin = new Padding(7, 5, 7, 5);
@@ -64,7 +68,8 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.White;
+            label1.BackColor = Color.WhiteSmoke;
+            label1.Cursor = Cursors.Hand;
             label1.ForeColor = Color.RoyalBlue;
             label1.Location = new Point(342, 479);
             label1.Margin = new Padding(7, 0, 7, 0);
@@ -76,7 +81,8 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.White;
+            label2.BackColor = Color.WhiteSmoke;
+            label2.Cursor = Cursors.Hand;
             label2.ForeColor = Color.RoyalBlue;
             label2.Location = new Point(1054, 479);
             label2.Margin = new Padding(7, 0, 7, 0);
@@ -88,7 +94,8 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.BackColor = Color.White;
+            label3.BackColor = Color.WhiteSmoke;
+            label3.Cursor = Cursors.Hand;
             label3.ForeColor = Color.RoyalBlue;
             label3.Location = new Point(975, 479);
             label3.Margin = new Padding(7, 0, 7, 0);
@@ -100,7 +107,8 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.BackColor = Color.White;
+            label4.BackColor = Color.WhiteSmoke;
+            label4.Cursor = Cursors.Hand;
             label4.ForeColor = Color.RoyalBlue;
             label4.Location = new Point(263, 479);
             label4.Margin = new Padding(7, 0, 7, 0);
@@ -111,8 +119,9 @@
             // 
             // DashboardControl
             // 
-            AutoScaleDimensions = new SizeF(17F, 33F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            AutoSize = true;
             BackColor = Color.White;
             Controls.Add(label3);
             Controls.Add(label2);
