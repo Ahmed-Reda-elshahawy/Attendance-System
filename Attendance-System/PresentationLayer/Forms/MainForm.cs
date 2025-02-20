@@ -1,4 +1,5 @@
 ﻿using Attendance;
+using Attendance_Management_System.PAL.User_Control;
 using Attendance_System.UserControls;
 using Report;
 using System;
@@ -18,6 +19,7 @@ namespace Attendance_System.Forms
         DashboardControl dashboardControl = new DashboardControl();
         UserControlReportAttendance userControlReportAttendance = new UserControlReportAttendance();
         usercontrolAttendance usercontrolAttendance = new usercontrolAttendance();
+        UserControlRegister instructorControl = new UserControlRegister();
         public MainForm()
         {
             InitializeComponent();
@@ -25,8 +27,10 @@ namespace Attendance_System.Forms
             dashboardControl.Dock = DockStyle.Fill;
             userControlReportAttendance.Dock = DockStyle.Fill;
             usercontrolAttendance.Dock = DockStyle.Fill;
+            instructorControl.Dock = DockStyle.Fill;
 
             p_main.Controls.Add(userControlReportAttendance);
+            p_main.Controls.Add(instructorControl);
             p_main.Controls.Add(usercontrolAttendance);
             p_main.Controls.Add(dashboardControl);
 
@@ -34,11 +38,13 @@ namespace Attendance_System.Forms
             dashboardControl.Visible = true;
             userControlReportAttendance.Visible = false;
             usercontrolAttendance.Visible = false;
+            instructorControl.Visible = false;
         }
 
         private void btn_report_Click(object sender, EventArgs e)
         {
             dashboardControl.Visible = false;
+            instructorControl.Visible = false;
             usercontrolAttendance.Visible = false;
             userControlReportAttendance.Visible = true;
         }
@@ -54,14 +60,24 @@ namespace Attendance_System.Forms
         {
             userControlReportAttendance.Visible = false;
             usercontrolAttendance.Visible = false;
+            instructorControl.Visible = false;
             dashboardControl.Visible = true;
         }
 
         private void btn_atten_Click(object sender, EventArgs e)
         {
             dashboardControl.Visible = false;
+            instructorControl.Visible = false;
             userControlReportAttendance.Visible = false;
             usercontrolAttendance.Visible = true;
+        }
+
+        private void btn_ins_Click(object sender, EventArgs e)
+        {
+            dashboardControl.Visible = false;
+            instructorControl.Visible = true;
+            usercontrolAttendance.Visible = false;
+            userControlReportAttendance.Visible = false;
         }
     }
 }

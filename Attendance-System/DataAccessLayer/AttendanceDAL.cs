@@ -17,7 +17,7 @@ namespace Attendance_System.DataAccessLayer
         {
             cmd.Connection = conn;
             DataTable dt = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dt);
             return dt;
         }

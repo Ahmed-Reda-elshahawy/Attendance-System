@@ -71,7 +71,7 @@
             tabPageMarkAttendance.Location = new Point(4, 4);
             tabPageMarkAttendance.Name = "tabPageMarkAttendance";
             tabPageMarkAttendance.Padding = new Padding(3);
-            tabPageMarkAttendance.Size = new Size(1474, 688);
+            tabPageMarkAttendance.Size = new Size(1474, 680);
             tabPageMarkAttendance.TabIndex = 0;
             tabPageMarkAttendance.Text = "Mark Attendance";
             tabPageMarkAttendance.UseVisualStyleBackColor = true;
@@ -251,7 +251,7 @@
             tabControl1.Alignment = TabAlignment.Bottom;
             tabControl1.Controls.Add(tabPageMarkAttendance);
             tabControl1.Dock = DockStyle.Fill;
-            tabControl1.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tabControl1.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
