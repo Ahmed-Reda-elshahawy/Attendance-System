@@ -52,5 +52,10 @@ namespace Attendance_System.BusinessLayer
             cmd.Parameters.AddWithValue("@id", ins_id);
             return AttendanceDAL.DML(cmd);
         }
+
+        //public static DataTable GetInstructorsByNames(string fname, string lname)
+        //{
+        //    SqlCommand cmd = new SqlCommand("select id, fname, lname, email, pass, Phone, Address, Gender from Instructor where fname = @fName and ");
+        //}
     }
 }

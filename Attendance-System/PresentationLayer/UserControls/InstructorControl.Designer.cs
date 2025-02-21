@@ -60,9 +60,6 @@
             tabPageSearchUser = new TabPage();
             btn_update = new Button();
             btn_delete = new Button();
-            comboBox1 = new ComboBox();
-            panel4 = new Panel();
-            label9 = new Label();
             dgv_instructors = new DataGridView();
             id = new DataGridViewTextBoxColumn();
             fname = new DataGridViewTextBoxColumn();
@@ -78,6 +75,7 @@
             label6 = new Label();
             label7 = new Label();
             tabPageUpdateInstructor = new TabPage();
+            btn_cancel = new Button();
             pb_show = new PictureBox();
             pb_notshow = new PictureBox();
             panel6 = new Panel();
@@ -129,7 +127,7 @@
             tabControlInstructor.Location = new Point(0, 0);
             tabControlInstructor.Name = "tabControlInstructor";
             tabControlInstructor.SelectedIndex = 0;
-            tabControlInstructor.Size = new Size(1482, 720);
+            tabControlInstructor.Size = new Size(1487, 692);
             tabControlInstructor.TabIndex = 0;
             // 
             // tabPageAddUser
@@ -164,7 +162,7 @@
             tabPageAddUser.Location = new Point(4, 4);
             tabPageAddUser.Name = "tabPageAddUser";
             tabPageAddUser.Padding = new Padding(3);
-            tabPageAddUser.Size = new Size(1474, 679);
+            tabPageAddUser.Size = new Size(1479, 651);
             tabPageAddUser.TabIndex = 0;
             tabPageAddUser.Text = "Add Instructor";
             tabPageAddUser.UseVisualStyleBackColor = true;
@@ -432,9 +430,6 @@
             tabPageSearchUser.BackColor = Color.Transparent;
             tabPageSearchUser.Controls.Add(btn_update);
             tabPageSearchUser.Controls.Add(btn_delete);
-            tabPageSearchUser.Controls.Add(comboBox1);
-            tabPageSearchUser.Controls.Add(panel4);
-            tabPageSearchUser.Controls.Add(label9);
             tabPageSearchUser.Controls.Add(dgv_instructors);
             tabPageSearchUser.Controls.Add(pictureBoxSearch);
             tabPageSearchUser.Controls.Add(panel5);
@@ -444,7 +439,7 @@
             tabPageSearchUser.Location = new Point(4, 4);
             tabPageSearchUser.Name = "tabPageSearchUser";
             tabPageSearchUser.Padding = new Padding(3);
-            tabPageSearchUser.Size = new Size(1474, 679);
+            tabPageSearchUser.Size = new Size(1479, 651);
             tabPageSearchUser.TabIndex = 1;
             tabPageSearchUser.Text = "Search";
             // 
@@ -471,36 +466,6 @@
             btn_delete.Text = "Delete";
             btn_delete.UseVisualStyleBackColor = false;
             btn_delete.Click += btn_delete_Click;
-            // 
-            // comboBox1
-            // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FlatStyle = FlatStyle.Flat;
-            comboBox1.Font = new Font("Tahoma", 13.8F);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "-- SELECT --", "Name", "PhoneNo.", "CNIC" });
-            comboBox1.Location = new Point(438, 142);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(261, 36);
-            comboBox1.TabIndex = 0;
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.LightGray;
-            panel4.Location = new Point(438, 172);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(261, 2);
-            panel4.TabIndex = 0;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
-            label9.Location = new Point(437, 107);
-            label9.Name = "label9";
-            label9.Size = new Size(128, 27);
-            label9.TabIndex = 0;
-            label9.Text = "Search By:";
             // 
             // dgv_instructors
             // 
@@ -604,8 +569,10 @@
             textBoxSearch.Font = new Font("Tahoma", 13.8F);
             textBoxSearch.Location = new Point(38, 150);
             textBoxSearch.Name = "textBoxSearch";
+            textBoxSearch.PlaceholderText = "Search by name";
             textBoxSearch.Size = new Size(270, 28);
             textBoxSearch.TabIndex = 0;
+            textBoxSearch.TextChanged += textBoxSearch_TextChanged;
             // 
             // label6
             // 
@@ -630,6 +597,7 @@
             // 
             // tabPageUpdateInstructor
             // 
+            tabPageUpdateInstructor.Controls.Add(btn_cancel);
             tabPageUpdateInstructor.Controls.Add(pb_show);
             tabPageUpdateInstructor.Controls.Add(pb_notshow);
             tabPageUpdateInstructor.Controls.Add(panel6);
@@ -658,10 +626,25 @@
             tabPageUpdateInstructor.Location = new Point(4, 4);
             tabPageUpdateInstructor.Name = "tabPageUpdateInstructor";
             tabPageUpdateInstructor.Padding = new Padding(3);
-            tabPageUpdateInstructor.Size = new Size(1474, 679);
+            tabPageUpdateInstructor.Size = new Size(1479, 651);
             tabPageUpdateInstructor.TabIndex = 2;
             tabPageUpdateInstructor.Text = "Update Instructor";
             tabPageUpdateInstructor.UseVisualStyleBackColor = true;
+            // 
+            // btn_cancel
+            // 
+            btn_cancel.BackColor = Color.DarkGray;
+            btn_cancel.FlatAppearance.BorderSize = 0;
+            btn_cancel.FlatStyle = FlatStyle.Flat;
+            btn_cancel.Font = new Font("Tahoma", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            btn_cancel.ForeColor = Color.White;
+            btn_cancel.Location = new Point(515, 569);
+            btn_cancel.Name = "btn_cancel";
+            btn_cancel.Size = new Size(114, 37);
+            btn_cancel.TabIndex = 25;
+            btn_cancel.Text = "Cancel";
+            btn_cancel.UseVisualStyleBackColor = false;
+            btn_cancel.Click += btn_cancel_Click;
             // 
             // pb_show
             // 
@@ -930,7 +913,7 @@
             ForeColor = Color.RoyalBlue;
             Margin = new Padding(5, 4, 5, 4);
             Name = "UserControlRegister";
-            Size = new Size(1482, 720);
+            Size = new Size(1487, 692);
             tabControlInstructor.ResumeLayout(false);
             tabPageAddUser.ResumeLayout(false);
             tabPageAddUser.PerformLayout();
@@ -961,9 +944,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPageSearchUser;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBoxSearch;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox textBoxSearch;
@@ -1025,5 +1005,6 @@
         private PictureBox pb_view;
         private PictureBox pb_show;
         private PictureBox pb_notshow;
+        private Button btn_cancel;
     }
 }

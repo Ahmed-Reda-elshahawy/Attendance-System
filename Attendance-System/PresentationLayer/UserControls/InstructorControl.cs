@@ -104,6 +104,9 @@ namespace Attendance_Management_System.PAL.User_Control
             pb_view.Visible = true;
             pb_notshow.Visible = false;
             pb_show.Visible = true;
+
+            // remove update tab
+            tabControlInstructor.TabPages.Remove(tabPageUpdateInstructor);
         }
 
         // Method to clear all input fields
@@ -115,8 +118,21 @@ namespace Attendance_Management_System.PAL.User_Control
             tb_password.Clear();
             tb_phone.Clear();
             tb_address.Clear();
-            rd_male.Checked = false; // Reset gender selection
+            rd_male.Checked = true; // Reset gender selection
             rd_female.Checked = false; // Reset gender selection
+            error_provider.Clear(); // Clear any error messages
+        }
+
+        private void ClearUpdateInputs()
+        {
+            tb_FN.Clear();
+            tb_LN.Clear();
+            tb_mail.Clear();
+            tb_P.Clear();
+            tb_ph.Clear();
+            tb_add.Clear();
+            male.Checked = true; // Reset gender selection
+            female.Checked = false; // Reset gender selection
             error_provider.Clear(); // Clear any error messages
         }
 
@@ -201,6 +217,12 @@ namespace Attendance_Management_System.PAL.User_Control
             string address = selectedRow.Cells["Address"].Value.ToString();
             char gender = Convert.ToChar(selectedRow.Cells["Gender"].Value);
 
+            // Add the update tab if it's not already added
+            if (!tabControlInstructor.TabPages.Contains(tabPageUpdateInstructor))
+            {
+                tabControlInstructor.TabPages.Add(tabPageUpdateInstructor);
+            }
+
             PopulateUpdateForm(instructorID, fname, lname, email, pass, phone, address, gender);
 
             tabControlInstructor.SelectedTab = tabPageUpdateInstructor;
@@ -227,6 +249,11 @@ namespace Attendance_Management_System.PAL.User_Control
 
         private void btn_saveUpdates_Click(object sender, EventArgs e)
         {
+            if (!ValidationHelper.ValidateInstructorInputs(error_provider, tb_FN, tb_LN, tb_mail, tb_P, tb_ph, tb_add))
+            {
+                return;
+            }
+
             string fname = tb_FN.Text;
             string lname = tb_LN.Text;
             string email = tb_mail.Text;
@@ -242,6 +269,12 @@ namespace Attendance_Management_System.PAL.User_Control
 
                 // Switch back to Tab 1
                 tabControlInstructor.SelectedTab = tabPageSearchUser;
+
+                // clear form
+                ClearUpdateInputs();
+
+                // remove update tab
+                tabControlInstructor.TabPages.Remove(tabPageUpdateInstructor);
 
                 // Refresh the DataGridView
                 RefreshDataGridView();
@@ -278,6 +311,40 @@ namespace Attendance_Management_System.PAL.User_Control
             tb_P.UseSystemPasswordChar = true;
             pb_notshow.Visible = false;
             pb_show.Visible = true;
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+
+            // Switch back to Tab 1
+            tabControlInstructor.SelectedTab = tabPageSearchUser;
+
+            // clear form
+            ClearUpdateInputs();
+
+            // remove update tab
+            tabControlInstructor.TabPages.Remove(tabPageUpdateInstructor);
+        }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            DataTable originalDataTable = InstructorBL.GetInstructors();
+            string searchTerm = textBoxSearch.Text.Trim();
+            if (string.IsNullOrEmpty(searchTerm))
+            {
+                dgv_instructors.DataSource = originalDataTable;
+                return;
+            }
+
+            // Use LINQ to filter the DataTable
+            var filteredRows = originalDataTable.AsEnumerable()
+                .Where(row => row.Field<string>("fname").IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                               row.Field<string>("lname").IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0);
+
+            // Convert the filtered rows to a new DataTable
+            DataTable filteredDataTable = filteredRows.Any() ? filteredRows.CopyToDataTable() : originalDataTable.Clone();
+
+            dgv_instructors.DataSource = filteredDataTable;
         }
     }
 }
