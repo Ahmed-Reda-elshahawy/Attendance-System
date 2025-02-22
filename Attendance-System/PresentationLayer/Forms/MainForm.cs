@@ -20,6 +20,7 @@ namespace Attendance_System.Forms
         UserControlReportAttendance userControlReportAttendance = new UserControlReportAttendance();
         usercontrolAttendance usercontrolAttendance = new usercontrolAttendance();
         UserControlRegister instructorControl = new UserControlRegister();
+        StudentUserControl studentUserControl = new StudentUserControl();
         public MainForm()
         {
             InitializeComponent();
@@ -28,17 +29,20 @@ namespace Attendance_System.Forms
             userControlReportAttendance.Dock = DockStyle.Fill;
             usercontrolAttendance.Dock = DockStyle.Fill;
             instructorControl.Dock = DockStyle.Fill;
+            studentUserControl.Dock = DockStyle.Fill;
 
             p_main.Controls.Add(userControlReportAttendance);
             p_main.Controls.Add(instructorControl);
             p_main.Controls.Add(usercontrolAttendance);
             p_main.Controls.Add(dashboardControl);
+            p_main.Controls.Add(studentUserControl);
 
             // Set initial visibility
             dashboardControl.Visible = true;
             userControlReportAttendance.Visible = false;
             usercontrolAttendance.Visible = false;
             instructorControl.Visible = false;
+            studentUserControl.Visible = false;
         }
 
         private void btn_report_Click(object sender, EventArgs e)
@@ -79,5 +83,15 @@ namespace Attendance_System.Forms
             usercontrolAttendance.Visible = false;
             userControlReportAttendance.Visible = false;
         }
+
+        private void btn_student_Click(object sender, EventArgs e)
+        {
+            dashboardControl.Visible = false;
+            userControlReportAttendance.Visible = false;
+            usercontrolAttendance.Visible = false;
+            instructorControl.Visible = false;
+            studentUserControl.Visible = true;
+        }
+
     }
 }
