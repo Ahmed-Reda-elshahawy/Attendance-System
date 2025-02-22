@@ -64,7 +64,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(306, 953);
+            panel1.Size = new Size(306, 749);
             panel1.TabIndex = 0;
             // 
             // btn_dash
@@ -138,6 +138,7 @@
             btn_student.TabIndex = 2;
             btn_student.Text = "Add Student";
             btn_student.UseVisualStyleBackColor = false;
+            btn_student.Click += btn_student_Click;
             // 
             // btn_group
             // 
@@ -180,7 +181,7 @@
             label1.Font = new Font("Tahoma", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.Location = new Point(23, 136);
             label1.Name = "label1";
-            label1.Size = new Size(239, 28);
+            label1.Size = new Size(194, 23);
             label1.TabIndex = 1;
             label1.Text = "Attendance System";
             // 
@@ -204,7 +205,7 @@
             btn_logout.FlatStyle = FlatStyle.Popup;
             btn_logout.ForeColor = Color.White;
             btn_logout.Image = (Image)resources.GetObject("btn_logout.Image");
-            btn_logout.Location = new Point(1510, 0);
+            btn_logout.Location = new Point(998, 0);
             btn_logout.Name = "btn_logout";
             btn_logout.Size = new Size(66, 89);
             btn_logout.TabIndex = 3;
@@ -221,7 +222,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(306, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1576, 89);
+            panel2.Size = new Size(1064, 89);
             panel2.TabIndex = 1;
             // 
             // label6
@@ -230,7 +231,7 @@
             label6.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             label6.Location = new Point(266, 27);
             label6.Name = "label6";
-            label6.Size = new Size(45, 28);
+            label6.Size = new Size(37, 23);
             label6.TabIndex = 1;
             label6.Text = "{?}";
             // 
@@ -240,7 +241,7 @@
             label3.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             label3.Location = new Point(197, 27);
             label3.Name = "label3";
-            label3.Size = new Size(63, 28);
+            label3.Size = new Size(53, 23);
             label3.TabIndex = 1;
             label3.Text = "Role:";
             // 
@@ -250,7 +251,7 @@
             label5.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             label5.Location = new Point(124, 25);
             label5.Name = "label5";
-            label5.Size = new Size(45, 28);
+            label5.Size = new Size(37, 23);
             label5.TabIndex = 0;
             label5.Text = "{?}";
             // 
@@ -260,7 +261,7 @@
             label2.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             label2.Location = new Point(6, 27);
             label2.Name = "label2";
-            label2.Size = new Size(112, 28);
+            label2.Size = new Size(93, 23);
             label2.TabIndex = 0;
             label2.Text = "Welcome:";
             // 
@@ -272,17 +273,17 @@
             p_main.Location = new Point(306, 89);
             p_main.Margin = new Padding(0);
             p_main.Name = "p_main";
-            p_main.Size = new Size(1576, 864);
+            p_main.Size = new Size(1064, 660);
             p_main.TabIndex = 2;
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             AutoScroll = true;
             AutoSize = true;
             BackColor = Color.White;
-            ClientSize = new Size(1882, 953);
+            ClientSize = new Size(1370, 749);
             Controls.Add(p_main);
             Controls.Add(panel2);
             Controls.Add(panel1);
