@@ -548,9 +548,10 @@
             // pictureBoxSearch
             // 
             pictureBoxSearch.Image = (Image)resources.GetObject("pictureBoxSearch.Image");
-            pictureBoxSearch.Location = new Point(288, 150);
+            pictureBoxSearch.Location = new Point(318, 150);
             pictureBoxSearch.Name = "pictureBoxSearch";
-            pictureBoxSearch.Size = new Size(20, 29);
+            pictureBoxSearch.Padding = new Padding(2);
+            pictureBoxSearch.Size = new Size(24, 29);
             pictureBoxSearch.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxSearch.TabIndex = 7;
             pictureBoxSearch.TabStop = false;
@@ -558,9 +559,9 @@
             // panel5
             // 
             panel5.BackColor = Color.LightGray;
-            panel5.Location = new Point(38, 181);
+            panel5.Location = new Point(38, 180);
             panel5.Name = "panel5";
-            panel5.Size = new Size(270, 2);
+            panel5.Size = new Size(307, 10);
             panel5.TabIndex = 0;
             // 
             // textBoxSearch
@@ -570,7 +571,7 @@
             textBoxSearch.Location = new Point(38, 150);
             textBoxSearch.Name = "textBoxSearch";
             textBoxSearch.PlaceholderText = "Search by name";
-            textBoxSearch.Size = new Size(270, 28);
+            textBoxSearch.Size = new Size(307, 28);
             textBoxSearch.TabIndex = 0;
             textBoxSearch.TextChanged += textBoxSearch_TextChanged;
             // 

@@ -330,21 +330,25 @@ namespace Attendance_Management_System.PAL.User_Control
         {
             DataTable originalDataTable = InstructorBL.GetInstructors();
             string searchTerm = textBoxSearch.Text.Trim();
-            if (string.IsNullOrEmpty(searchTerm))
-            {
-                dgv_instructors.DataSource = originalDataTable;
-                return;
-            }
+            //if (string.IsNullOrEmpty(searchTerm))
+            //{
+            //    dgv_instructors.DataSource = originalDataTable;
+            //    return;
+            //}
 
-            // Use LINQ to filter the DataTable
-            var filteredRows = originalDataTable.AsEnumerable()
-                .Where(row => row.Field<string>("fname").IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0 ||
-                               row.Field<string>("lname").IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0);
+            //// Use LINQ to filter the DataTable
+            //var filteredRows = originalDataTable.AsEnumerable()
+            //    .Where(row => row.Field<string>("fname").IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0 ||
+            //                   row.Field<string>("lname").IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0);
 
-            // Convert the filtered rows to a new DataTable
-            DataTable filteredDataTable = filteredRows.Any() ? filteredRows.CopyToDataTable() : originalDataTable.Clone();
+            //// Convert the filtered rows to a new DataTable
+            //DataTable filteredDataTable = filteredRows.Any() ? filteredRows.CopyToDataTable() : originalDataTable.Clone();
 
-            dgv_instructors.DataSource = filteredDataTable;
+            //dgv_instructors.DataSource = filteredDataTable;
+
+            DataView dv = originalDataTable.DefaultView;
+            dv.RowFilter = $"fname like '%{searchTerm}%' or lname like '%{searchTerm}%'";
+            dgv_instructors.DataSource = dv.ToTable();
         }
     }
 }
