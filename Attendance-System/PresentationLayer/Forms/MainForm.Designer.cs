@@ -64,11 +64,8 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-<<<<<<< HEAD
             panel1.Size = new Size(306, 749);
-=======
             panel1.Size = new Size(306, 674);
->>>>>>> d0ccf20 (feat: add student and instructor forms with updates of admin dashboard)
             panel1.TabIndex = 0;
             // 
             // btn_dash
@@ -202,7 +199,6 @@
             // 
             // p_main
             // 
-<<<<<<< HEAD
             btn_logout.BackColor = Color.Tomato;
             btn_logout.BackgroundImageLayout = ImageLayout.None;
             btn_logout.Cursor = Cursors.Hand;
@@ -259,7 +255,6 @@
             label5.Size = new Size(37, 23);
             label5.TabIndex = 0;
             label5.Text = "{?}";
-=======
             p_main.AutoScroll = true;
             p_main.AutoSize = true;
             p_main.Dock = DockStyle.Fill;
@@ -268,7 +263,6 @@
             p_main.Name = "p_main";
             p_main.Size = new Size(1403, 590);
             p_main.TabIndex = 2;
->>>>>>> d0ccf20 (feat: add student and instructor forms with updates of admin dashboard)
             // 
             // label2
             // 
@@ -282,7 +276,6 @@
             // 
             // label5
             // 
-<<<<<<< HEAD
             p_main.AutoScroll = true;
             p_main.AutoSize = true;
             p_main.Dock = DockStyle.Fill;
@@ -291,7 +284,6 @@
             p_main.Name = "p_main";
             p_main.Size = new Size(1064, 660);
             p_main.TabIndex = 2;
-=======
             label5.AutoSize = true;
             label5.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             label5.Location = new Point(124, 25);
@@ -349,7 +341,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1403, 84);
             panel2.TabIndex = 1;
->>>>>>> d0ccf20 (feat: add student and instructor forms with updates of admin dashboard)
             // 
             // MainForm
             // 
@@ -358,11 +349,8 @@
             AutoScroll = true;
             AutoSize = true;
             BackColor = Color.White;
-<<<<<<< HEAD
             ClientSize = new Size(1370, 749);
-=======
             ClientSize = new Size(1709, 674);
->>>>>>> d0ccf20 (feat: add student and instructor forms with updates of admin dashboard)
             Controls.Add(p_main);
             Controls.Add(panel2);
             Controls.Add(panel1);
