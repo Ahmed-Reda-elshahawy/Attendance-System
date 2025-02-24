@@ -38,13 +38,13 @@
             btn_atten = new Button();
             label1 = new Label();
             pictureBox1 = new PictureBox();
+            p_main = new Panel();
+            label2 = new Label();
+            label5 = new Label();
+            label3 = new Label();
+            label6 = new Label();
             btn_logout = new Button();
             panel2 = new Panel();
-            label6 = new Label();
-            label3 = new Label();
-            label5 = new Label();
-            label2 = new Label();
-            p_main = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -80,7 +80,7 @@
             btn_dash.ImageAlign = ContentAlignment.MiddleLeft;
             btn_dash.Location = new Point(5, 233);
             btn_dash.Name = "btn_dash";
-            btn_dash.Size = new Size(291, 57);
+            btn_dash.Size = new Size(291, 52);
             btn_dash.TabIndex = 2;
             btn_dash.Text = "DashBoard";
             btn_dash.UseVisualStyleBackColor = false;
@@ -98,7 +98,7 @@
             btn_report.ImageAlign = ContentAlignment.MiddleLeft;
             btn_report.Location = new Point(5, 588);
             btn_report.Name = "btn_report";
-            btn_report.Size = new Size(291, 57);
+            btn_report.Size = new Size(291, 52);
             btn_report.TabIndex = 2;
             btn_report.Text = "Reports";
             btn_report.UseVisualStyleBackColor = false;
@@ -116,7 +116,7 @@
             btn_ins.ImageAlign = ContentAlignment.MiddleLeft;
             btn_ins.Location = new Point(5, 517);
             btn_ins.Name = "btn_ins";
-            btn_ins.Size = new Size(291, 57);
+            btn_ins.Size = new Size(291, 52);
             btn_ins.TabIndex = 2;
             btn_ins.Text = "Add Instructor";
             btn_ins.UseVisualStyleBackColor = false;
@@ -134,7 +134,7 @@
             btn_student.ImageAlign = ContentAlignment.MiddleLeft;
             btn_student.Location = new Point(5, 446);
             btn_student.Name = "btn_student";
-            btn_student.Size = new Size(291, 57);
+            btn_student.Size = new Size(291, 52);
             btn_student.TabIndex = 2;
             btn_student.Text = "Add Student";
             btn_student.UseVisualStyleBackColor = false;
@@ -152,7 +152,7 @@
             btn_group.ImageAlign = ContentAlignment.MiddleLeft;
             btn_group.Location = new Point(5, 375);
             btn_group.Name = "btn_group";
-            btn_group.Size = new Size(291, 57);
+            btn_group.Size = new Size(291, 52);
             btn_group.TabIndex = 2;
             btn_group.Text = "Add Group";
             btn_group.UseVisualStyleBackColor = false;
@@ -169,7 +169,7 @@
             btn_atten.ImageAlign = ContentAlignment.MiddleLeft;
             btn_atten.Location = new Point(5, 304);
             btn_atten.Name = "btn_atten";
-            btn_atten.Size = new Size(291, 57);
+            btn_atten.Size = new Size(291, 52);
             btn_atten.TabIndex = 2;
             btn_atten.Text = "Attendance";
             btn_atten.UseVisualStyleBackColor = false;
@@ -191,12 +191,12 @@
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(306, 133);
+            pictureBox1.Size = new Size(306, 128);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // btn_logout
+            // p_main
             // 
             btn_logout.BackColor = Color.Tomato;
             btn_logout.BackgroundImageLayout = ImageLayout.None;
@@ -254,6 +254,14 @@
             label5.Size = new Size(37, 23);
             label5.TabIndex = 0;
             label5.Text = "{?}";
+            p_main.AutoScroll = true;
+            p_main.AutoSize = true;
+            p_main.Dock = DockStyle.Fill;
+            p_main.Location = new Point(306, 84);
+            p_main.Margin = new Padding(0);
+            p_main.Name = "p_main";
+            p_main.Size = new Size(1403, 590);
+            p_main.TabIndex = 2;
             // 
             // label2
             // 
@@ -265,7 +273,7 @@
             label2.TabIndex = 0;
             label2.Text = "Welcome:";
             // 
-            // p_main
+            // label5
             // 
             p_main.AutoScroll = true;
             p_main.AutoSize = true;
@@ -275,6 +283,63 @@
             p_main.Name = "p_main";
             p_main.Size = new Size(1064, 660);
             p_main.TabIndex = 2;
+            label5.AutoSize = true;
+            label5.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
+            label5.Location = new Point(124, 25);
+            label5.Name = "label5";
+            label5.Size = new Size(45, 28);
+            label5.TabIndex = 0;
+            label5.Text = "{?}";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
+            label3.Location = new Point(197, 27);
+            label3.Name = "label3";
+            label3.Size = new Size(63, 28);
+            label3.TabIndex = 1;
+            label3.Text = "Role:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
+            label6.Location = new Point(266, 27);
+            label6.Name = "label6";
+            label6.Size = new Size(45, 28);
+            label6.TabIndex = 1;
+            label6.Text = "{?}";
+            // 
+            // btn_logout
+            // 
+            btn_logout.BackColor = Color.Tomato;
+            btn_logout.BackgroundImageLayout = ImageLayout.None;
+            btn_logout.Cursor = Cursors.Hand;
+            btn_logout.Dock = DockStyle.Right;
+            btn_logout.FlatStyle = FlatStyle.Popup;
+            btn_logout.ForeColor = Color.White;
+            btn_logout.Image = (Image)resources.GetObject("btn_logout.Image");
+            btn_logout.Location = new Point(1335, 0);
+            btn_logout.Name = "btn_logout";
+            btn_logout.Size = new Size(66, 82);
+            btn_logout.TabIndex = 3;
+            btn_logout.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.RoyalBlue;
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(btn_logout);
+            panel2.Controls.Add(label6);
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(label2);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(306, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1403, 84);
+            panel2.TabIndex = 1;
             // 
             // MainForm
             // 
@@ -289,6 +354,7 @@
             Controls.Add(panel1);
             Font = new Font("Tahoma", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ForeColor = Color.White;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(5, 4, 5, 4);
             Name = "MainForm";
@@ -308,7 +374,6 @@
 
         private Panel panel1;
         private PictureBox pictureBox1;
-        private Panel panel2;
         private Label label1;
         private Button btn_atten;
         private Button btn_dash;
@@ -316,11 +381,12 @@
         private Button btn_ins;
         private Button btn_student;
         private Button btn_group;
-        private Label label6;
-        private Label label3;
-        private Label label5;
-        private Label label2;
-        private Button btn_logout;
         private Panel p_main;
+        private Label label2;
+        private Label label5;
+        private Label label3;
+        private Label label6;
+        private Button btn_logout;
+        private Panel panel2;
     }
 }

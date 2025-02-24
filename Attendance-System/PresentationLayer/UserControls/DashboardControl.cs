@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Attendance_System.BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,17 @@ namespace Attendance_System.UserControls
         public DashboardControl()
         {
             InitializeComponent();
+        }
+
+        private void DashboardControl_Load(object sender, EventArgs e)
+        {
+            ShowCountOfSystemElements();
+        }
+        private void ShowCountOfSystemElements()
+        {
+            lb_students.Text = AdminDashboardBL.GetStudentsCount().ToString();
+            lb_groups.Text =  AdminDashboardBL.GetGroupsCount().ToString();
+            lb_instructors.Text =  AdminDashboardBL.GetInstructorsCount().ToString();
         }
     }
 }

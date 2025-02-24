@@ -30,5 +30,14 @@ namespace Attendance_System.DataAccessLayer
             conn.Close();
             return res;
         }
+        public static int GetScalar(SqlCommand cmd)
+        {
+            int res = 0;
+            cmd.Connection = conn;
+            conn.Open();
+            res = Convert.ToInt32(cmd.ExecuteScalar());
+            conn.Close();
+            return res;
+        }
     }
 }

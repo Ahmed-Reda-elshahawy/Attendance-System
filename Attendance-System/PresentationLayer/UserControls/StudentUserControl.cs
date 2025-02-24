@@ -12,7 +12,6 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using Attendance_System.PresentationLayer.Validation.YourNamespace;
 using System.ComponentModel.DataAnnotations;
 using Attendance_System.PresentationLayer.Validation;
-using Attendance_System.BusinessLayer;
 using Microsoft.IdentityModel.Tokens;
 namespace Attendance_Management_System.PAL.User_Control
 {
