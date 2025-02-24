@@ -65,7 +65,6 @@
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(306, 749);
-            panel1.Size = new Size(306, 674);
             panel1.TabIndex = 0;
             // 
             // btn_dash
@@ -350,7 +349,6 @@
             AutoSize = true;
             BackColor = Color.White;
             ClientSize = new Size(1370, 749);
-            ClientSize = new Size(1709, 674);
             Controls.Add(p_main);
             Controls.Add(panel2);
             Controls.Add(panel1);
