@@ -1,5 +1,6 @@
 ﻿using Attendance;
 using Attendance_Management_System.PAL.User_Control;
+using Attendance_System.BusinessLayer;
 using Attendance_System.UserControls;
 using Report;
 using System;
@@ -51,6 +52,12 @@ namespace Attendance_System.Forms
             instructorControl.Visible = false;
             usercontrolAttendance.Visible = false;
             userControlReportAttendance.Visible = true;
+            userControlReportAttendance.dvgGroupRep.DataSource = ReportBL.getAllAttendance();
+            userControlReportAttendance.dvgGroupRep.Columns["ID"].Width = 80;
+            userControlReportAttendance.dvgGroupRep.Columns["Group"].Width = 100;
+            userControlReportAttendance.dvgGroupRep.Columns["Date"].Width = 180;
+            userControlReportAttendance.dvgGroupRep.Columns["Status"].Width = 180;
+
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -93,5 +100,9 @@ namespace Attendance_System.Forms
             studentUserControl.Visible = true;
         }
 
+        private void p_main_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

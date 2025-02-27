@@ -181,7 +181,7 @@
             label1.Font = new Font("Tahoma", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.Location = new Point(23, 136);
             label1.Name = "label1";
-            label1.Size = new Size(194, 23);
+            label1.Size = new Size(239, 28);
             label1.TabIndex = 1;
             label1.Text = "Attendance System";
             // 
@@ -198,70 +198,15 @@
             // 
             // p_main
             // 
-            btn_logout.BackColor = Color.Tomato;
-            btn_logout.BackgroundImageLayout = ImageLayout.None;
-            btn_logout.Cursor = Cursors.Hand;
-            btn_logout.Dock = DockStyle.Right;
-            btn_logout.FlatStyle = FlatStyle.Popup;
-            btn_logout.ForeColor = Color.White;
-            btn_logout.Image = (Image)resources.GetObject("btn_logout.Image");
-            btn_logout.Location = new Point(998, 0);
-            btn_logout.Name = "btn_logout";
-            btn_logout.Size = new Size(66, 89);
-            btn_logout.TabIndex = 3;
-            btn_logout.UseVisualStyleBackColor = false;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.RoyalBlue;
-            panel2.Controls.Add(btn_logout);
-            panel2.Controls.Add(label6);
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(label5);
-            panel2.Controls.Add(label2);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(306, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1064, 89);
-            panel2.TabIndex = 1;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
-            label6.Location = new Point(266, 27);
-            label6.Name = "label6";
-            label6.Size = new Size(37, 23);
-            label6.TabIndex = 1;
-            label6.Text = "{?}";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
-            label3.Location = new Point(197, 27);
-            label3.Name = "label3";
-            label3.Size = new Size(53, 23);
-            label3.TabIndex = 1;
-            label3.Text = "Role:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
-            label5.Location = new Point(124, 25);
-            label5.Name = "label5";
-            label5.Size = new Size(37, 23);
-            label5.TabIndex = 0;
-            label5.Text = "{?}";
             p_main.AutoScroll = true;
             p_main.AutoSize = true;
             p_main.Dock = DockStyle.Fill;
             p_main.Location = new Point(306, 84);
             p_main.Margin = new Padding(0);
             p_main.Name = "p_main";
-            p_main.Size = new Size(1403, 590);
+            p_main.Size = new Size(1064, 665);
             p_main.TabIndex = 2;
+            p_main.Paint += p_main_Paint;
             // 
             // label2
             // 
@@ -269,20 +214,12 @@
             label2.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             label2.Location = new Point(6, 27);
             label2.Name = "label2";
-            label2.Size = new Size(93, 23);
+            label2.Size = new Size(112, 28);
             label2.TabIndex = 0;
             label2.Text = "Welcome:";
             // 
             // label5
             // 
-            p_main.AutoScroll = true;
-            p_main.AutoSize = true;
-            p_main.Dock = DockStyle.Fill;
-            p_main.Location = new Point(306, 89);
-            p_main.Margin = new Padding(0);
-            p_main.Name = "p_main";
-            p_main.Size = new Size(1064, 660);
-            p_main.TabIndex = 2;
             label5.AutoSize = true;
             label5.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             label5.Location = new Point(124, 25);
@@ -320,7 +257,7 @@
             btn_logout.FlatStyle = FlatStyle.Popup;
             btn_logout.ForeColor = Color.White;
             btn_logout.Image = (Image)resources.GetObject("btn_logout.Image");
-            btn_logout.Location = new Point(1335, 0);
+            btn_logout.Location = new Point(996, 0);
             btn_logout.Name = "btn_logout";
             btn_logout.Size = new Size(66, 82);
             btn_logout.TabIndex = 3;
@@ -338,12 +275,12 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(306, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1403, 84);
+            panel2.Size = new Size(1064, 84);
             panel2.TabIndex = 1;
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             AutoScroll = true;
             AutoSize = true;

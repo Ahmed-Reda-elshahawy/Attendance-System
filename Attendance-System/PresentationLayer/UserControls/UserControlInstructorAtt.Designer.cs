@@ -1,6 +1,6 @@
-﻿namespace Attendance
+﻿namespace Attendance_System.PresentationLayer.UserControls
 {
-    partial class usercontrolAttendance
+    partial class UserControlInstructorAtt
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,6 +30,7 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            tabControl1 = new TabControl();
             tabPageMarkAttendance = new TabPage();
             txtAtt = new TextBox();
             save = new Button();
@@ -47,14 +48,25 @@
             panel4 = new Panel();
             label2 = new Label();
             label1 = new Label();
-            tabControl1 = new TabControl();
+            tabControl1.SuspendLayout();
             tabPageMarkAttendance.SuspendLayout();
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dvgAtt).BeginInit();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
-            tabControl1.SuspendLayout();
             SuspendLayout();
+            // 
+            // tabControl1
+            // 
+            tabControl1.Alignment = TabAlignment.Bottom;
+            tabControl1.Controls.Add(tabPageMarkAttendance);
+            tabControl1.Dock = DockStyle.Fill;
+            tabControl1.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tabControl1.Location = new Point(0, 0);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(1474, 680);
+            tabControl1.TabIndex = 1;
             // 
             // tabPageMarkAttendance
             // 
@@ -75,7 +87,7 @@
             tabPageMarkAttendance.Location = new Point(4, 4);
             tabPageMarkAttendance.Name = "tabPageMarkAttendance";
             tabPageMarkAttendance.Padding = new Padding(3);
-            tabPageMarkAttendance.Size = new Size(1474, 680);
+            tabPageMarkAttendance.Size = new Size(1466, 640);
             tabPageMarkAttendance.TabIndex = 0;
             tabPageMarkAttendance.Text = "Mark Attendance";
             tabPageMarkAttendance.UseVisualStyleBackColor = true;
@@ -100,7 +112,6 @@
             save.TabIndex = 12;
             save.Text = "save";
             save.UseVisualStyleBackColor = false;
-            save.Click += save_Click;
             // 
             // getAtt
             // 
@@ -113,7 +124,6 @@
             getAtt.TabIndex = 11;
             getAtt.Text = "view";
             getAtt.UseVisualStyleBackColor = false;
-            getAtt.Click += getAtt_Click;
             // 
             // panel7
             // 
@@ -166,12 +176,11 @@
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.RoyalBlue;
-            label3.Location = new Point(549, 96);
+            label3.Location = new Point(552, 99);
             label3.Name = "label3";
             label3.Size = new Size(88, 27);
             label3.TabIndex = 7;
             label3.Text = "Group:";
-            label3.Click += label3_Click;
             // 
             // flowLayoutPanel1
             // 
@@ -238,7 +247,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.RoyalBlue;
-            label2.Location = new Point(72, 93);
+            label2.Location = new Point(75, 96);
             label2.Name = "label2";
             label2.Size = new Size(71, 27);
             label2.TabIndex = 1;
@@ -250,62 +259,48 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Century Gothic", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.RoyalBlue;
-            label1.Location = new Point(6, 3);
+            label1.Location = new Point(9, 6);
             label1.Name = "label1";
             label1.Size = new Size(296, 38);
             label1.TabIndex = 0;
             label1.Text = "Mark Attendance : ";
             // 
-            // tabControl1
+            // UserControlInstructorAtt
             // 
-            tabControl1.Alignment = TabAlignment.Bottom;
-            tabControl1.Controls.Add(tabPageMarkAttendance);
-            tabControl1.Dock = DockStyle.Fill;
-            tabControl1.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tabControl1.Location = new Point(0, 0);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1482, 720);
-            tabControl1.TabIndex = 0;
-            // 
-            // usercontrolAttendance
-            // 
-            AutoScaleDimensions = new SizeF(10F, 21F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
             Controls.Add(tabControl1);
-            Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Margin = new Padding(5, 4, 5, 4);
-            Name = "usercontrolAttendance";
-            Size = new Size(1482, 720);
+            Name = "UserControlInstructorAtt";
+            Size = new Size(1474, 680);
+            tabControl1.ResumeLayout(false);
             tabPageMarkAttendance.ResumeLayout(false);
             tabPageMarkAttendance.PerformLayout();
             panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dvgAtt).EndInit();
             panel3.ResumeLayout(false);
             panel1.ResumeLayout(false);
-            tabControl1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-        private System.Windows.Forms.TabPage tabPageMarkAttendance;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DateTimePicker dtAtt;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel5;
+
+        private TabControl tabControl1;
+        private TabPage tabPageMarkAttendance;
+        private TextBox txtAtt;
         private Button save;
         private Button getAtt;
         private Panel panel7;
         private DataGridView dvgAtt;
-        private TextBox txtAtt;
+        private Panel panel6;
+        private Label label3;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Panel panel3;
+        private Panel panel5;
+        private DateTimePicker dtAtt;
+        private Panel panel2;
+        private Panel panel1;
+        private Panel panel4;
+        private Label label2;
+        private Label label1;
     }
 }
