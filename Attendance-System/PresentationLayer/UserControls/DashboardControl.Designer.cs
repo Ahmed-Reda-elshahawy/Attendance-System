@@ -243,7 +243,7 @@
             Margin = new Padding(7, 5, 7, 5);
             Name = "DashboardControl";
             Size = new Size(1528, 671);
-            Load += DashboardControl_Load;
+            //Load += DashboardControl_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();

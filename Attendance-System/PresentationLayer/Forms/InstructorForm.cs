@@ -19,7 +19,7 @@ namespace Attendance_System.PresentationLayer.Forms
     public partial class InstructorForm : Form
     {
 
-
+        private Form parentForm;
         //UserControlReportAttendance userControlReportAttendance2 = new UserControlReportAttendance();
 
         usercontrolAttendance usercontrolAttendance2 = new usercontrolAttendance();
@@ -30,9 +30,10 @@ namespace Attendance_System.PresentationLayer.Forms
         UserControlReportInstructor userControlReportAttendance2 = new UserControlReportInstructor();
 
 
-        public InstructorForm()
+        public InstructorForm(int userId, Form parent)
         {
             InitializeComponent();
+            parentForm = parent;
             //panel2.Visible = false;
             //panel2.Location = new Point(360, 0);
             //mainPanal.Location = new Point(360, 100);
@@ -80,6 +81,12 @@ namespace Attendance_System.PresentationLayer.Forms
         private void insPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnI_logout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            parentForm.Show();
         }
     }
 }

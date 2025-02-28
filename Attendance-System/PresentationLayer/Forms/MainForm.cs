@@ -1,6 +1,7 @@
 ﻿using Attendance;
 using Attendance_Management_System.PAL.User_Control;
 using Attendance_System.BusinessLayer;
+using Attendance_System.PresentationLayer.UserControls;
 using Attendance_System.UserControls;
 using Report;
 using System;
@@ -15,15 +16,19 @@ using System.Windows.Forms;
 
 namespace Attendance_System.Forms
 {
+    
     public partial class MainForm : Form
     {
+        private Form parentForm;
         DashboardControl dashboardControl = new DashboardControl();
         UserControlReportAttendance userControlReportAttendance = new UserControlReportAttendance();
         usercontrolAttendance usercontrolAttendance = new usercontrolAttendance();
         UserControlRegister instructorControl = new UserControlRegister();
         StudentUserControl studentUserControl = new StudentUserControl();
-        public MainForm()
+        GroupControl groupControl = new GroupControl();
+        public MainForm(int userId,Form parent)
         {
+            parentForm = parent;
             InitializeComponent();
             // Add controls to the form
             dashboardControl.Dock = DockStyle.Fill;
@@ -31,12 +36,14 @@ namespace Attendance_System.Forms
             usercontrolAttendance.Dock = DockStyle.Fill;
             instructorControl.Dock = DockStyle.Fill;
             studentUserControl.Dock = DockStyle.Fill;
+            groupControl.Dock = DockStyle.Fill;
 
             p_main.Controls.Add(userControlReportAttendance);
             p_main.Controls.Add(instructorControl);
             p_main.Controls.Add(usercontrolAttendance);
             p_main.Controls.Add(dashboardControl);
             p_main.Controls.Add(studentUserControl);
+            p_main.Controls.Add(groupControl);
 
             // Set initial visibility
             dashboardControl.Visible = true;
@@ -44,6 +51,7 @@ namespace Attendance_System.Forms
             usercontrolAttendance.Visible = false;
             instructorControl.Visible = false;
             studentUserControl.Visible = false;
+            groupControl.Visible = false;
         }
 
         private void btn_report_Click(object sender, EventArgs e)
@@ -51,6 +59,8 @@ namespace Attendance_System.Forms
             dashboardControl.Visible = false;
             instructorControl.Visible = false;
             usercontrolAttendance.Visible = false;
+            groupControl.Visible = false;
+            studentUserControl.Visible = false;
             userControlReportAttendance.Visible = true;
             userControlReportAttendance.dvgGroupRep.DataSource = ReportBL.getAllAttendance();
             userControlReportAttendance.dvgGroupRep.Columns["ID"].Width = 80;
@@ -72,6 +82,8 @@ namespace Attendance_System.Forms
             userControlReportAttendance.Visible = false;
             usercontrolAttendance.Visible = false;
             instructorControl.Visible = false;
+            groupControl.Visible = false;
+            studentUserControl.Visible = false;
             dashboardControl.Visible = true;
         }
 
@@ -80,29 +92,52 @@ namespace Attendance_System.Forms
             dashboardControl.Visible = false;
             instructorControl.Visible = false;
             userControlReportAttendance.Visible = false;
+            studentUserControl.Visible = false;
+            groupControl.Visible = false;
             usercontrolAttendance.Visible = true;
         }
 
         private void btn_ins_Click(object sender, EventArgs e)
         {
             dashboardControl.Visible = false;
-            instructorControl.Visible = true;
             usercontrolAttendance.Visible = false;
             userControlReportAttendance.Visible = false;
+            groupControl.Visible = false;
+            studentUserControl.Visible = false;
+            instructorControl.Visible = true;
         }
 
         private void btn_student_Click(object sender, EventArgs e)
         {
             dashboardControl.Visible = false;
-            userControlReportAttendance.Visible = false;
             usercontrolAttendance.Visible = false;
+            userControlReportAttendance.Visible = false;
+            groupControl.Visible = false;
             instructorControl.Visible = false;
             studentUserControl.Visible = true;
+
         }
 
         private void p_main_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btn_group_Click(object sender, EventArgs e)
+        {
+            dashboardControl.Visible = false;
+            userControlReportAttendance.Visible = false;
+            usercontrolAttendance.Visible = false;
+            instructorControl.Visible = false;
+            studentUserControl.Visible = false;
+            groupControl.Visible = true;
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            
+            this.Close();
+            parentForm.Show();
         }
     }
 }

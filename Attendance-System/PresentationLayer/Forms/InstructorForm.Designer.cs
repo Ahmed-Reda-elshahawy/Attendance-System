@@ -44,6 +44,7 @@
             label3 = new Label();
             label5 = new Label();
             label4 = new Label();
+            btnI_logout = new Button();
             p_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -182,6 +183,7 @@
             // panel2
             // 
             panel2.BackColor = Color.RoyalBlue;
+            panel2.Controls.Add(btnI_logout);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label5);
@@ -232,6 +234,22 @@
             label4.TabIndex = 9;
             label4.Text = "Welcome:";
             // 
+            // btnI_logout
+            // 
+            btnI_logout.BackColor = Color.Tomato;
+            btnI_logout.BackgroundImageLayout = ImageLayout.None;
+            btnI_logout.Cursor = Cursors.Hand;
+            btnI_logout.Dock = DockStyle.Right;
+            btnI_logout.FlatStyle = FlatStyle.Popup;
+            btnI_logout.ForeColor = Color.White;
+            btnI_logout.Image = (Image)resources.GetObject("btnI_logout.Image");
+            btnI_logout.Location = new Point(1161, 0);
+            btnI_logout.Name = "btnI_logout";
+            btnI_logout.Size = new Size(66, 72);
+            btnI_logout.TabIndex = 12;
+            btnI_logout.UseVisualStyleBackColor = false;
+            btnI_logout.Click += btnI_logout_Click;
+            // 
             // InstructorForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -274,5 +292,6 @@
         private Label label5;
         private Label label4;
         private Panel insPanel;
+        private Button btnI_logout;
     }
 }

@@ -16,6 +16,7 @@ namespace Attendance_System.UserControls
         public DashboardControl()
         {
             InitializeComponent();
+            
         }
 
         private void DashboardControl_Load(object sender, EventArgs e)

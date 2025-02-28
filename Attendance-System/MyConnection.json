@@ -1,3 +1,3 @@
 {
-  "connection": "Data Source=.;Initial Catalog=Attendance;Integrated Security=True;Trust Server Certificate=True"
+  "connection": "Data Source=DESKTOP-8U88BJF\\SQLEXPRESS;Initial Catalog=Attendance;Integrated Security=True;Encrypt=True;Trust Server Certificate=True"
 }

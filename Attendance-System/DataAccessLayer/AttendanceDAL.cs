@@ -39,5 +39,31 @@ namespace Attendance_System.DataAccessLayer
             conn.Close();
             return res;
         }
+
+        internal static bool ExecuteScalar(SqlCommand cmd)
+
+        {
+            bool result = false;
+            try
+            {
+                cmd.Connection = conn;
+                conn.Open();
+                var scalarResult = cmd.ExecuteScalar();
+
+                if (scalarResult != null && bool.TryParse(scalarResult.ToString(), out bool parsedResult))
+                {
+                    result = parsedResult;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return result;
+        }
     }
 }

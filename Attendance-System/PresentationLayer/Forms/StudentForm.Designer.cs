@@ -94,6 +94,7 @@
             btn_atten.TabIndex = 2;
             btn_atten.Text = "Attendance";
             btn_atten.UseVisualStyleBackColor = false;
+            btn_atten.Click += btn_atten_Click;
             // 
             // label1
             // 
@@ -154,6 +155,7 @@
             btn_logout.Size = new Size(66, 70);
             btn_logout.TabIndex = 8;
             btn_logout.UseVisualStyleBackColor = false;
+            btn_logout.Click += btn_logout_Click;
             // 
             // label6
             // 

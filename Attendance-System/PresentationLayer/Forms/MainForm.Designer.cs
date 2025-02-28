@@ -156,6 +156,7 @@
             btn_group.TabIndex = 2;
             btn_group.Text = "Add Group";
             btn_group.UseVisualStyleBackColor = false;
+            btn_group.Click += btn_group_Click;
             // 
             // btn_atten
             // 
@@ -262,6 +263,7 @@
             btn_logout.Size = new Size(66, 82);
             btn_logout.TabIndex = 3;
             btn_logout.UseVisualStyleBackColor = false;
+            btn_logout.Click += btn_logout_Click;
             // 
             // panel2
             // 
