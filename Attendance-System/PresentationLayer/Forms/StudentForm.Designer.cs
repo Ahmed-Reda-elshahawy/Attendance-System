@@ -34,16 +34,15 @@
             btn_atten = new Button();
             label1 = new Label();
             pictureBox1 = new PictureBox();
+            mainPanal_1 = new Panel();
             mainPanal = new Panel();
             panel3 = new Panel();
             btn_logout = new Button();
-            label6 = new Label();
-            label3 = new Label();
-            label5 = new Label();
+            std_name = new Label();
             label2 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            mainPanal.SuspendLayout();
+            mainPanal_1.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
@@ -77,6 +76,7 @@
             btn_dash.TabIndex = 2;
             btn_dash.Text = "DashBoard";
             btn_dash.UseVisualStyleBackColor = false;
+            btn_dash.Click += btn_dash_Click;
             // 
             // btn_atten
             // 
@@ -116,24 +116,32 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // mainPanal_1
+            // 
+            mainPanal_1.BackColor = Color.White;
+            mainPanal_1.Controls.Add(mainPanal);
+            mainPanal_1.Controls.Add(panel3);
+            mainPanal_1.Dock = DockStyle.Fill;
+            mainPanal_1.Location = new Point(306, 0);
+            mainPanal_1.Name = "mainPanal_1";
+            mainPanal_1.Size = new Size(1234, 663);
+            mainPanal_1.TabIndex = 4;
+            // 
             // mainPanal
             // 
-            mainPanal.BackColor = Color.White;
-            mainPanal.Controls.Add(panel3);
+            mainPanal.BackColor = Color.WhiteSmoke;
             mainPanal.Dock = DockStyle.Fill;
-            mainPanal.Location = new Point(306, 0);
+            mainPanal.Location = new Point(0, 72);
             mainPanal.Name = "mainPanal";
-            mainPanal.Size = new Size(1234, 663);
-            mainPanal.TabIndex = 4;
+            mainPanal.Size = new Size(1234, 591);
+            mainPanal.TabIndex = 1;
             // 
             // panel3
             // 
             panel3.BackColor = Color.RoyalBlue;
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(btn_logout);
-            panel3.Controls.Add(label6);
-            panel3.Controls.Add(label3);
-            panel3.Controls.Add(label5);
+            panel3.Controls.Add(std_name);
             panel3.Controls.Add(label2);
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 0);
@@ -157,41 +165,21 @@
             btn_logout.UseVisualStyleBackColor = false;
             btn_logout.Click += btn_logout_Click;
             // 
-            // label6
+            // std_name
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
-            label6.Location = new Point(263, 27);
-            label6.Name = "label6";
-            label6.Size = new Size(45, 28);
-            label6.TabIndex = 6;
-            label6.Text = "{?}";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
-            label3.Location = new Point(194, 27);
-            label3.Name = "label3";
-            label3.Size = new Size(63, 28);
-            label3.TabIndex = 7;
-            label3.Text = "Role:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
-            label5.Location = new Point(121, 25);
-            label5.Name = "label5";
-            label5.Size = new Size(45, 28);
-            label5.TabIndex = 4;
-            label5.Text = "{?}";
+            std_name.AutoSize = true;
+            std_name.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
+            std_name.Location = new Point(155, 25);
+            std_name.Name = "std_name";
+            std_name.Size = new Size(45, 28);
+            std_name.TabIndex = 4;
+            std_name.Text = "{?}";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
-            label2.Location = new Point(3, 27);
+            label2.Location = new Point(37, 27);
             label2.Name = "label2";
             label2.Size = new Size(112, 28);
             label2.TabIndex = 5;
@@ -203,18 +191,22 @@
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.White;
             ClientSize = new Size(1540, 663);
-            Controls.Add(mainPanal);
+            Controls.Add(mainPanal_1);
             Controls.Add(panel1);
             Font = new Font("Tahoma", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
             ForeColor = Color.White;
+            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "StudentForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Student Attendance";
+            WindowState = FormWindowState.Maximized;
+            FormClosing += StudentForm_FormClosing;
+            Load += StudentForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            mainPanal.ResumeLayout(false);
+            mainPanal_1.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ResumeLayout(false);
@@ -227,12 +219,11 @@
         private Button btn_atten;
         private Label label1;
         private PictureBox pictureBox1;
-        private Panel mainPanal;
+        private Panel mainPanal_1;
         private Panel panel3;
         private Button btn_logout;
-        private Label label6;
-        private Label label3;
-        private Label label5;
+        private Label std_name;
         private Label label2;
+        private Panel mainPanal;
     }
 }

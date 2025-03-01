@@ -58,6 +58,7 @@
             // 
             // tabPageMarkAttendance
             // 
+            tabPageMarkAttendance.BackColor = Color.White;
             tabPageMarkAttendance.Controls.Add(txtAtt);
             tabPageMarkAttendance.Controls.Add(save);
             tabPageMarkAttendance.Controls.Add(getAtt);
@@ -78,15 +79,17 @@
             tabPageMarkAttendance.Size = new Size(1474, 680);
             tabPageMarkAttendance.TabIndex = 0;
             tabPageMarkAttendance.Text = "Mark Attendance";
-            tabPageMarkAttendance.UseVisualStyleBackColor = true;
             // 
             // txtAtt
             // 
-            txtAtt.BackColor = Color.FromArgb(224, 224, 224);
+            txtAtt.BackColor = Color.White;
+            txtAtt.BorderStyle = BorderStyle.None;
+            txtAtt.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtAtt.ForeColor = Color.Black;
-            txtAtt.Location = new Point(662, 87);
+            txtAtt.Location = new Point(613, 91);
             txtAtt.Name = "txtAtt";
-            txtAtt.Size = new Size(200, 36);
+            txtAtt.PlaceholderText = "Group";
+            txtAtt.Size = new Size(200, 25);
             txtAtt.TabIndex = 13;
             // 
             // save
@@ -94,9 +97,9 @@
             save.BackColor = Color.RoyalBlue;
             save.Cursor = Cursors.Hand;
             save.ForeColor = Color.White;
-            save.Location = new Point(1254, 639);
+            save.Location = new Point(1285, 94);
             save.Name = "save";
-            save.Size = new Size(107, 35);
+            save.Size = new Size(107, 39);
             save.TabIndex = 12;
             save.Text = "save";
             save.UseVisualStyleBackColor = false;
@@ -107,9 +110,9 @@
             getAtt.BackColor = Color.RoyalBlue;
             getAtt.Cursor = Cursors.Hand;
             getAtt.ForeColor = Color.White;
-            getAtt.Location = new Point(965, 93);
+            getAtt.Location = new Point(859, 91);
             getAtt.Name = "getAtt";
-            getAtt.Size = new Size(107, 35);
+            getAtt.Size = new Size(110, 39);
             getAtt.TabIndex = 11;
             getAtt.Text = "view";
             getAtt.UseVisualStyleBackColor = false;
@@ -156,7 +159,7 @@
             // panel6
             // 
             panel6.BackColor = Color.Transparent;
-            panel6.Location = new Point(662, 122);
+            panel6.Location = new Point(613, 126);
             panel6.Name = "panel6";
             panel6.Size = new Size(200, 2);
             panel6.TabIndex = 9;
@@ -166,7 +169,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.RoyalBlue;
-            label3.Location = new Point(549, 96);
+            label3.Location = new Point(500, 100);
             label3.Name = "label3";
             label3.Size = new Size(88, 27);
             label3.TabIndex = 7;

@@ -89,6 +89,7 @@
             // 
             // tabPageAddG
             // 
+            tabPageAddG.BackColor = Color.White;
             tabPageAddG.Controls.Add(LblInvlideSLT);
             tabPageAddG.Controls.Add(LblInvalidNumOfStudent);
             tabPageAddG.Controls.Add(LblInvalidCode);
@@ -117,34 +118,30 @@
             tabPageAddG.Size = new Size(1479, 651);
             tabPageAddG.TabIndex = 0;
             tabPageAddG.Text = "Add Group";
-            tabPageAddG.UseVisualStyleBackColor = true;
             // 
             // LblInvlideSLT
             // 
             LblInvlideSLT.AutoSize = true;
             LblInvlideSLT.Location = new Point(643, 357);
             LblInvlideSLT.Name = "LblInvlideSLT";
-            LblInvlideSLT.Size = new Size(60, 21);
+            LblInvlideSLT.Size = new Size(0, 21);
             LblInvlideSLT.TabIndex = 6;
-            LblInvlideSLT.Text = "label1";
             // 
             // LblInvalidNumOfStudent
             // 
             LblInvalidNumOfStudent.AutoSize = true;
             LblInvalidNumOfStudent.Location = new Point(1229, 209);
             LblInvalidNumOfStudent.Name = "LblInvalidNumOfStudent";
-            LblInvalidNumOfStudent.Size = new Size(60, 21);
+            LblInvalidNumOfStudent.Size = new Size(0, 21);
             LblInvalidNumOfStudent.TabIndex = 6;
-            LblInvalidNumOfStudent.Text = "label1";
             // 
             // LblInvalidCode
             // 
             LblInvalidCode.AutoSize = true;
             LblInvalidCode.Location = new Point(609, 209);
             LblInvalidCode.Name = "LblInvalidCode";
-            LblInvalidCode.Size = new Size(60, 21);
+            LblInvalidCode.Size = new Size(0, 21);
             LblInvalidCode.TabIndex = 6;
-            LblInvalidCode.Text = "label1";
             // 
             // InvlideSLT
             // 
@@ -197,7 +194,7 @@
             // panel3
             // 
             panel3.BackColor = SystemColors.Control;
-            panel3.Location = new Point(889, 228);
+            panel3.Location = new Point(889, 235);
             panel3.Name = "panel3";
             panel3.Size = new Size(307, 2);
             panel3.TabIndex = 3;
@@ -224,6 +221,7 @@
             txtDiscription.Location = new Point(889, 331);
             txtDiscription.Multiline = true;
             txtDiscription.Name = "txtDiscription";
+            txtDiscription.PlaceholderText = "Discription";
             txtDiscription.Size = new Size(317, 137);
             txtDiscription.TabIndex = 1;
             txtDiscription.TextChanged += textBox2_TextChanged;
@@ -233,6 +231,7 @@
             txtNOS.BorderStyle = BorderStyle.None;
             txtNOS.Location = new Point(888, 209);
             txtNOS.Name = "txtNOS";
+            txtNOS.PlaceholderText = "Number of students";
             txtNOS.Size = new Size(305, 21);
             txtNOS.TabIndex = 1;
             txtNOS.TextChanged += textBox2_TextChanged;
@@ -250,6 +249,7 @@
             txtGC.BorderStyle = BorderStyle.None;
             txtGC.Location = new Point(282, 202);
             txtGC.Name = "txtGC";
+            txtGC.PlaceholderText = "Group Name";
             txtGC.Size = new Size(305, 21);
             txtGC.TabIndex = 1;
             // 
@@ -292,24 +292,25 @@
             lblGC.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             lblGC.Location = new Point(282, 147);
             lblGC.Name = "lblGC";
-            lblGC.Size = new Size(131, 28);
+            lblGC.Size = new Size(138, 28);
             lblGC.TabIndex = 0;
-            lblGC.Text = "Group Code";
+            lblGC.Text = "Group Name";
             lblGC.Click += label1_Click;
             // 
             // LbLAddG
             // 
             LbLAddG.AutoSize = true;
-            LbLAddG.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
+            LbLAddG.Font = new Font("Tahoma", 16.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
             LbLAddG.Location = new Point(24, 23);
             LbLAddG.Name = "LbLAddG";
-            LbLAddG.Size = new Size(120, 28);
+            LbLAddG.Size = new Size(146, 34);
             LbLAddG.TabIndex = 0;
             LbLAddG.Text = "Add Group";
             LbLAddG.Click += label1_Click;
             // 
             // tabPageSearchG
             // 
+            tabPageSearchG.BackColor = Color.White;
             tabPageSearchG.Controls.Add(btnGUpdate);
             tabPageSearchG.Controls.Add(btnGDelete);
             tabPageSearchG.Controls.Add(lblSINS);
@@ -326,7 +327,6 @@
             tabPageSearchG.Size = new Size(1479, 651);
             tabPageSearchG.TabIndex = 1;
             tabPageSearchG.Text = "Search";
-            tabPageSearchG.UseVisualStyleBackColor = true;
             // 
             // btnGUpdate
             // 
@@ -334,7 +334,7 @@
             btnGUpdate.FlatStyle = FlatStyle.Flat;
             btnGUpdate.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
             btnGUpdate.ForeColor = Color.White;
-            btnGUpdate.Location = new Point(1261, 86);
+            btnGUpdate.Location = new Point(1346, 119);
             btnGUpdate.Name = "btnGUpdate";
             btnGUpdate.Size = new Size(109, 44);
             btnGUpdate.TabIndex = 4;
@@ -348,7 +348,7 @@
             btnGDelete.FlatStyle = FlatStyle.Flat;
             btnGDelete.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
             btnGDelete.ForeColor = Color.White;
-            btnGDelete.Location = new Point(1060, 86);
+            btnGDelete.Location = new Point(1221, 119);
             btnGDelete.Name = "btnGDelete";
             btnGDelete.Size = new Size(109, 44);
             btnGDelete.TabIndex = 4;
@@ -360,7 +360,7 @@
             // 
             lblSINS.AutoSize = true;
             lblSINS.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
-            lblSINS.Location = new Point(504, 60);
+            lblSINS.Location = new Point(498, 100);
             lblSINS.Name = "lblSINS";
             lblSINS.Size = new Size(138, 19);
             lblSINS.TabIndex = 3;
@@ -370,7 +370,7 @@
             // 
             lblSGC.AutoSize = true;
             lblSGC.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
-            lblSGC.Location = new Point(33, 60);
+            lblSGC.Location = new Point(27, 100);
             lblSGC.Name = "lblSGC";
             lblSGC.Size = new Size(111, 19);
             lblSGC.TabIndex = 3;
@@ -379,7 +379,7 @@
             // sltSGI
             // 
             sltSGI.FormattingEnabled = true;
-            sltSGI.Location = new Point(504, 94);
+            sltSGI.Location = new Point(498, 134);
             sltSGI.Name = "sltSGI";
             sltSGI.Size = new Size(250, 29);
             sltSGI.TabIndex = 2;
@@ -387,7 +387,7 @@
             // sltSGC
             // 
             sltSGC.FormattingEnabled = true;
-            sltSGC.Location = new Point(33, 94);
+            sltSGC.Location = new Point(27, 134);
             sltSGC.Name = "sltSGC";
             sltSGC.Size = new Size(250, 29);
             sltSGC.TabIndex = 2;
@@ -438,12 +438,12 @@
             // LblSearch
             // 
             LblSearch.AutoSize = true;
-            LblSearch.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
+            LblSearch.Font = new Font("Tahoma", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             LblSearch.Location = new Point(8, 8);
             LblSearch.Name = "LblSearch";
-            LblSearch.Size = new Size(81, 28);
+            LblSearch.Size = new Size(112, 34);
             LblSearch.TabIndex = 0;
-            LblSearch.Text = "Serach";
+            LblSearch.Text = "Search";
             // 
             // GroupControl
             // 

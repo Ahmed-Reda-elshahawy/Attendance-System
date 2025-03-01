@@ -18,49 +18,48 @@ namespace Attendance_System.PresentationLayer.Forms
 {
     public partial class InstructorForm : Form
     {
-
+        private int userId;
+        private string userName;
         private Form parentForm;
-        //UserControlReportAttendance userControlReportAttendance2 = new UserControlReportAttendance();
-
         usercontrolAttendance usercontrolAttendance2 = new usercontrolAttendance();
+        UserControlReportInstructor userControlReportAttendance2;
+        InstructorDashboardControl instructorDashboard;
 
 
-        //UserControlInstructorAtt usercontrolAttendance2 = new UserControlInstructorAtt();
-
-        UserControlReportInstructor userControlReportAttendance2 = new UserControlReportInstructor();
-
-
-        public InstructorForm(int userId, Form parent)
+        public InstructorForm(int userId, string userName, Form parent)
         {
+            this.userId = userId;
+            this.userName = userName;
+            instructorDashboard = new InstructorDashboardControl(userId);
+            userControlReportAttendance2 = new UserControlReportInstructor(userId);
             InitializeComponent();
             parentForm = parent;
-            //panel2.Visible = false;
-            //panel2.Location = new Point(360, 0);
-            //mainPanal.Location = new Point(360, 100);
             userControlReportAttendance2.Dock = DockStyle.Fill;
             usercontrolAttendance2.Dock = DockStyle.Fill;
+            instructorDashboard.Dock = DockStyle.Fill;
 
 
             insPanel.Controls.Add(userControlReportAttendance2);
             insPanel.Controls.Add(usercontrolAttendance2);
+            insPanel.Controls.Add(instructorDashboard);
 
 
             userControlReportAttendance2.Visible = false;
             usercontrolAttendance2.Visible = false;
-
-
+            instructorDashboard.Visible = true;
         }
 
         private void btn_atten_Click(object sender, EventArgs e)
         {
             userControlReportAttendance2.Visible = false;
-
+            instructorDashboard.Visible = false;
             usercontrolAttendance2.Visible = true;
         }
 
         private void btn_report_Click(object sender, EventArgs e)
         {
             userControlReportAttendance2.Visible = true;
+            instructorDashboard.Visible = false;
             usercontrolAttendance2.Visible = false;
 
             userControlReportAttendance2.dvgGroupRepIns.DataSource = BusinessLayer.ReportBL.getAllAttendanceForSpecificIns(2);
@@ -75,7 +74,7 @@ namespace Attendance_System.PresentationLayer.Forms
 
         private void InstructorForm_Load(object sender, EventArgs e)
         {
-
+            ins_name.Text = userName;
         }
 
         private void insPanel_Paint(object sender, PaintEventArgs e)
@@ -85,8 +84,34 @@ namespace Attendance_System.PresentationLayer.Forms
 
         private void btnI_logout_Click(object sender, EventArgs e)
         {
-            this.Close();
-            parentForm.Show();
+            DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                parentForm.Show();
+            }
+        }
+
+        private void btn_dash_Click(object sender, EventArgs e)
+        {
+            userControlReportAttendance2.Visible = false;
+            usercontrolAttendance2.Visible = false;
+            instructorDashboard.Visible = true;
+        }
+
+        private void InstructorForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
     }
 }

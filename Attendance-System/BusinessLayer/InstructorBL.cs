@@ -57,5 +57,17 @@ namespace Attendance_System.BusinessLayer
         //{
         //    SqlCommand cmd = new SqlCommand("select id, fname, lname, email, pass, Phone, Address, Gender from Instructor where fname = @fName and ");
         //}
+        public static DataTable GetInstructorsByEmail(string email)
+        {
+            SqlCommand cmd = new SqlCommand("select id, fname, lname, email, pass, Phone, Address, Gender from Instructor where email = @Email");
+            cmd.Parameters.AddWithValue("@Email", email);
+            return AttendanceDAL.Select(cmd);
+        }
+        public static DataTable GetInstructorDashboardData(int id)
+        {
+            SqlCommand cmd = new SqlCommand("select i.fname+' '+i.lname as IFullName, i.email, i.Phone, i.Address, g.className, g.discription from Groups g inner join Instructor i on i.id = g.instructor_id where i.id = @ID;");
+            cmd.Parameters.AddWithValue("@ID", id);
+            return AttendanceDAL.Select(cmd);
+        }
     }
 }

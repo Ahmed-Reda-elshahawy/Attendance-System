@@ -15,34 +15,6 @@ namespace Attendance_System.BusinessLayer
         // Method to handle user login
         public static DataTable Login(string email, string password)
         {
-            //string query = "SELECT * FROM Admin WHERE email = @email AND pass = @password";
-            //SqlCommand cmd = new SqlCommand(query);
-            //cmd.Parameters.AddWithValue("@email", email);
-            //cmd.Parameters.AddWithValue("@password", password);
-
-            //DataTable result = AttendanceDAL.Select(cmd);
-
-            //// If no result is found in Admin table, check Instructor table
-            //if (result.Rows.Count == 0)
-            //{
-            //    query = "SELECT * FROM Instructor WHERE email = @email AND pass = @password";
-            //    cmd = new SqlCommand(query);
-            //    cmd.Parameters.AddWithValue("@email", email);
-            //    cmd.Parameters.AddWithValue("@password", password);
-            //    result = AttendanceDAL.Select(cmd);
-            //}
-
-            //// If no result is found in Instructor table, check Student table
-            //if (result.Rows.Count == 0)
-            //{
-            //    query = "SELECT * FROM Student WHERE email = @email AND pass = @password";
-            //    cmd = new SqlCommand(query);
-            //    cmd.Parameters.AddWithValue("@email", email);
-            //    cmd.Parameters.AddWithValue("@password", password);
-            //    result = AttendanceDAL.Select(cmd);
-            //}
-
-            //return result;
 
             DataTable result = new DataTable();
             string query = "";
@@ -50,7 +22,7 @@ namespace Attendance_System.BusinessLayer
             using (SqlCommand cmd = new SqlCommand())
             {
                 // Check Admin table
-                query = "SELECT ID, 'Admin' AS Role FROM Admin WHERE email = @email AND pass = @password";
+                query = "SELECT ID, 'Admin' As fname, 'Admin' AS Role FROM Admin WHERE email = @email AND pass = @password";
                 cmd.CommandText = query;
                 cmd.Parameters.AddWithValue("@email", email);
                 cmd.Parameters.AddWithValue("@password", password);
@@ -59,13 +31,13 @@ namespace Attendance_System.BusinessLayer
                 if (result.Rows.Count > 0) return result;
 
                 // Check Instructor table
-                query = "SELECT ID, 'Instructor' AS Role FROM Instructor WHERE email = @email AND pass = @password";
+                query = "SELECT ID, fname, 'Instructor' AS Role FROM Instructor WHERE email = @email AND pass = @password";
                 cmd.CommandText = query;
                 result = AttendanceDAL.Select(cmd);
                 if (result.Rows.Count > 0) return result;
 
                 // Check Student table
-                query = "SELECT ID, 'Student' AS Role FROM Student WHERE email = @email AND pass = @password";
+                query = "SELECT ID, fname, 'Student' AS Role FROM Student WHERE email = @email AND pass = @password";
                 cmd.CommandText = query;
                 result = AttendanceDAL.Select(cmd);
                 if (result.Rows.Count > 0) return result;
@@ -73,6 +45,8 @@ namespace Attendance_System.BusinessLayer
 
             return result; // Return empty DataTable if no match found
         }
+
+
 
         // Method to retrieve password by email (Forget Password)
         public static string GetPasswordByEmail(string email)

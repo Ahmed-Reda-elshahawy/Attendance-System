@@ -182,8 +182,6 @@ namespace Attendance_System
         {
             if (parentForm != null)
             {
-                MessageBox.Show("Failed to send email. Error: ");
-
                parentForm.Show();
             }
         }

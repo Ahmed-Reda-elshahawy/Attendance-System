@@ -40,9 +40,7 @@
             pictureBox1 = new PictureBox();
             p_main = new Panel();
             label2 = new Label();
-            label5 = new Label();
-            label3 = new Label();
-            label6 = new Label();
+            admin_name = new Label();
             btn_logout = new Button();
             panel2 = new Panel();
             panel1.SuspendLayout();
@@ -202,10 +200,10 @@
             p_main.AutoScroll = true;
             p_main.AutoSize = true;
             p_main.Dock = DockStyle.Fill;
-            p_main.Location = new Point(306, 84);
+            p_main.Location = new Point(306, 70);
             p_main.Margin = new Padding(0);
             p_main.Name = "p_main";
-            p_main.Size = new Size(1064, 665);
+            p_main.Size = new Size(1064, 679);
             p_main.TabIndex = 2;
             p_main.Paint += p_main_Paint;
             // 
@@ -213,41 +211,21 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
-            label2.Location = new Point(6, 27);
+            label2.Location = new Point(29, 27);
             label2.Name = "label2";
             label2.Size = new Size(112, 28);
             label2.TabIndex = 0;
             label2.Text = "Welcome:";
             // 
-            // label5
+            // admin_name
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
-            label5.Location = new Point(124, 25);
-            label5.Name = "label5";
-            label5.Size = new Size(45, 28);
-            label5.TabIndex = 0;
-            label5.Text = "{?}";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
-            label3.Location = new Point(197, 27);
-            label3.Name = "label3";
-            label3.Size = new Size(63, 28);
-            label3.TabIndex = 1;
-            label3.Text = "Role:";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
-            label6.Location = new Point(266, 27);
-            label6.Name = "label6";
-            label6.Size = new Size(45, 28);
-            label6.TabIndex = 1;
-            label6.Text = "{?}";
+            admin_name.AutoSize = true;
+            admin_name.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
+            admin_name.Location = new Point(147, 25);
+            admin_name.Name = "admin_name";
+            admin_name.Size = new Size(45, 28);
+            admin_name.TabIndex = 0;
+            admin_name.Text = "{?}";
             // 
             // btn_logout
             // 
@@ -260,7 +238,7 @@
             btn_logout.Image = (Image)resources.GetObject("btn_logout.Image");
             btn_logout.Location = new Point(996, 0);
             btn_logout.Name = "btn_logout";
-            btn_logout.Size = new Size(66, 82);
+            btn_logout.Size = new Size(66, 68);
             btn_logout.TabIndex = 3;
             btn_logout.UseVisualStyleBackColor = false;
             btn_logout.Click += btn_logout_Click;
@@ -270,14 +248,12 @@
             panel2.BackColor = Color.RoyalBlue;
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(btn_logout);
-            panel2.Controls.Add(label6);
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(label5);
+            panel2.Controls.Add(admin_name);
             panel2.Controls.Add(label2);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(306, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1064, 84);
+            panel2.Size = new Size(1064, 70);
             panel2.TabIndex = 1;
             // 
             // MainForm
@@ -293,12 +269,14 @@
             Controls.Add(panel1);
             Font = new Font("Tahoma", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ForeColor = Color.White;
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(5, 4, 5, 4);
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Attendance System";
+            WindowState = FormWindowState.Maximized;
+            FormClosing += MainForm_FormClosing;
             Load += MainForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -322,9 +300,7 @@
         private Button btn_group;
         private Panel p_main;
         private Label label2;
-        private Label label5;
-        private Label label3;
-        private Label label6;
+        private Label admin_name;
         private Button btn_logout;
         private Panel panel2;
     }

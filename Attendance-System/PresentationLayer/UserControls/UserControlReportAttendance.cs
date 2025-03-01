@@ -99,9 +99,10 @@ namespace Report
             }
             else
             {
-                MessageBox.Show($"{ReportBL.getAttendaceByClassNameAndDate((txtGroupRep.Text), (dtRepGroup.Value.ToString())).Rows.Count}");
-                dvgGroupRep.DataSource = null;
+                //MessageBox.Show($"{ReportBL.getAttendaceByClassNameAndDate((txtGroupRep.Text), (dtRepGroup.Value.ToString())).Rows.Count}");
+                //dvgGroupRep.DataSource = null;
                 MessageBox.Show($"No Attendace of group {txtGroupRep.Text} in date {dtRepGroup.Value.ToString()}!", "Not Matched", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;             
             }
             dvgGroupRep.Columns["ID"].Width = 80;
             dvgGroupRep.Columns["Group"].Width = 100;
@@ -114,8 +115,16 @@ namespace Report
 
         private void GroupRep_Click(object sender, EventArgs e)
         {
-            dvgGroupRep.DataSource = ReportBL.getAllAttendance();
-            dvgStudentRep.DataSource = ReportBL.getAllAttendance();
+            if(ReportBL.getAllAttendance().Rows.Count > 0)
+            {
+                dvgGroupRep.DataSource = ReportBL.getAllAttendance();
+                dvgStudentRep.DataSource = ReportBL.getAllAttendance();
+            }
+            else
+            {
+                MessageBox.Show($"No Attendace Found!", "Not Matched", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             dvgGroupRep.Columns["ID"].Width = 80;
             dvgGroupRep.Columns["Group"].Width = 100;
             dvgGroupRep.Columns["Date"].Width = 180;
@@ -129,36 +138,42 @@ namespace Report
 
         private void view1_Click(object sender, EventArgs e)
         {
-            if (ReportBL.getStdAttendance(int.Parse(txtStdId.Text)).Rows.Count > 0)
+            if (int.TryParse(txtStdId.Text, out int number))
             {
-                dvgStudentRep.DataSource = ReportBL.getStdAttendance(int.Parse(txtStdId.Text));
+                if (ReportBL.getStdAttendance(int.Parse(txtStdId.Text)).Rows.Count > 0)
+                {
+                    dvgStudentRep.DataSource = ReportBL.getStdAttendance(int.Parse(txtStdId.Text));
+                }
+                else
+                {
+                    //dvgStudentRep.DataSource = null;
+                    MessageBox.Show($"No Studnt Found with this Id {txtStdId.Text}!", "Not Matched", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                dvgStudentRep.Columns["ID"].Width = 80;
+                dvgStudentRep.Columns["Group"].Width = 100;
+                dvgStudentRep.Columns["Date"].Width = 180;
+                dvgStudentRep.Columns["Status"].Width = 180;
+                txtStdId.Text = string.Empty;
+                txtStdId.Focus();
             }
             else
             {
-                dvgStudentRep.DataSource = null;
-                MessageBox.Show($"No Studnt Found with this Id {txtStdId}!", "Not Matched", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter a valid ID", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            dvgStudentRep.Columns["ID"].Width = 80;
-            dvgStudentRep.Columns["Group"].Width = 100;
-            dvgStudentRep.Columns["Date"].Width = 180;
-            dvgStudentRep.Columns["Status"].Width = 180;
-            txtStdId.Text = string.Empty;
-            txtStdId.Focus();
         }
 
         private void pictureBoxPrint_Click(object sender, EventArgs e)
         {
             if (dvgStudentRep == null || dvgStudentRep.Rows.Count <= 0)
-
             {
                 MessageBox.Show("No data available to export!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                return;
             }
             else
             {
-
                 ReportBL.ExportDataGridViewToExcel(dvgStudentRep);
-
             }
 
         }
@@ -166,10 +181,9 @@ namespace Report
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (dvgGroupRep == null || dvgGroupRep.Rows.Count <= 0)
-
             {
                 MessageBox.Show("No data available to export!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                return;
             }
             else
             {

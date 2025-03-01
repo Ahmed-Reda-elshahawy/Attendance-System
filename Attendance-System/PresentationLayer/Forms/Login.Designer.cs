@@ -96,7 +96,7 @@
             // 
             // btnLogin
             // 
-            btnLogin.BackColor = Color.FromArgb(67, 3, 125);
+            btnLogin.BackColor = Color.RoyalBlue;
             btnLogin.FlatAppearance.BorderSize = 0;
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
@@ -154,7 +154,7 @@
             labelFP.AutoSize = true;
             labelFP.Cursor = Cursors.Hand;
             labelFP.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
-            labelFP.ForeColor = Color.FromArgb(67, 3, 125);
+            labelFP.ForeColor = Color.RoyalBlue;
             labelFP.Location = new Point(140, 262);
             labelFP.Name = "labelFP";
             labelFP.Size = new Size(157, 19);
@@ -178,9 +178,9 @@
             LblLUsername.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
             LblLUsername.Location = new Point(92, 59);
             LblLUsername.Name = "LblLUsername";
-            LblLUsername.Size = new Size(96, 19);
+            LblLUsername.Size = new Size(58, 19);
             LblLUsername.TabIndex = 0;
-            LblLUsername.Text = "Username:";
+            LblLUsername.Text = "Email:";
             // 
             // panel1
             // 
@@ -205,8 +205,8 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            label3.ForeColor = Color.DarkBlue;
-            label3.Location = new Point(888, 509);
+            label3.ForeColor = Color.RoyalBlue;
+            label3.Location = new Point(896, 514);
             label3.Name = "label3";
             label3.Size = new Size(79, 23);
             label3.TabIndex = 0;
@@ -217,7 +217,7 @@
             // 
             LblLTitle.AutoSize = true;
             LblLTitle.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            LblLTitle.ForeColor = Color.DarkBlue;
+            LblLTitle.ForeColor = Color.RoyalBlue;
             LblLTitle.Location = new Point(809, 486);
             LblLTitle.Name = "LblLTitle";
             LblLTitle.Size = new Size(251, 23);

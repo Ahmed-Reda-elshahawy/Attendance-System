@@ -40,11 +40,9 @@
             mainPanel = new Panel();
             insPanel = new Panel();
             panel2 = new Panel();
-            label6 = new Label();
-            label3 = new Label();
-            label5 = new Label();
-            label4 = new Label();
             btnI_logout = new Button();
+            ins_name = new Label();
+            label4 = new Label();
             p_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -88,6 +86,7 @@
             btn_dash.TabIndex = 2;
             btn_dash.Text = "DashBoard";
             btn_dash.UseVisualStyleBackColor = false;
+            btn_dash.Click += btn_dash_Click;
             // 
             // label1
             // 
@@ -173,6 +172,7 @@
             // 
             // insPanel
             // 
+            insPanel.BackColor = Color.WhiteSmoke;
             insPanel.Dock = DockStyle.Fill;
             insPanel.Location = new Point(0, 72);
             insPanel.Name = "insPanel";
@@ -184,55 +184,13 @@
             // 
             panel2.BackColor = Color.RoyalBlue;
             panel2.Controls.Add(btnI_logout);
-            panel2.Controls.Add(label6);
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(label5);
+            panel2.Controls.Add(ins_name);
             panel2.Controls.Add(label4);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(1227, 72);
             panel2.TabIndex = 5;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
-            label6.Location = new Point(277, 28);
-            label6.Name = "label6";
-            label6.Size = new Size(45, 28);
-            label6.TabIndex = 10;
-            label6.Text = "{?}";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
-            label3.Location = new Point(208, 28);
-            label3.Name = "label3";
-            label3.Size = new Size(63, 28);
-            label3.TabIndex = 11;
-            label3.Text = "Role:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
-            label5.Location = new Point(135, 26);
-            label5.Name = "label5";
-            label5.Size = new Size(45, 28);
-            label5.TabIndex = 8;
-            label5.Text = "{?}";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
-            label4.Location = new Point(17, 28);
-            label4.Name = "label4";
-            label4.Size = new Size(112, 28);
-            label4.TabIndex = 9;
-            label4.Text = "Welcome:";
             // 
             // btnI_logout
             // 
@@ -250,6 +208,26 @@
             btnI_logout.UseVisualStyleBackColor = false;
             btnI_logout.Click += btnI_logout_Click;
             // 
+            // ins_name
+            // 
+            ins_name.AutoSize = true;
+            ins_name.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
+            ins_name.Location = new Point(151, 26);
+            ins_name.Name = "ins_name";
+            ins_name.Size = new Size(45, 28);
+            ins_name.TabIndex = 8;
+            ins_name.Text = "{?}";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
+            label4.Location = new Point(33, 28);
+            label4.Name = "label4";
+            label4.Size = new Size(112, 28);
+            label4.TabIndex = 9;
+            label4.Text = "Welcome:";
+            // 
             // InstructorForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -259,11 +237,13 @@
             Controls.Add(mainPanel);
             Controls.Add(panel1);
             ForeColor = Color.White;
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "InstructorForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Instructor Form";
+            WindowState = FormWindowState.Maximized;
+            FormClosing += InstructorForm_FormClosing;
             Load += InstructorForm_Load;
             p_main.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -287,9 +267,7 @@
         private Button btn_atten;
         private Panel mainPanel;
         private Panel panel2;
-        private Label label6;
-        private Label label3;
-        private Label label5;
+        private Label ins_name;
         private Label label4;
         private Panel insPanel;
         private Button btnI_logout;

@@ -28,32 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            panel6 = new Panel();
             lblsSSAtt = new Label();
             sltSSAtt = new ComboBox();
             dvgAttStudent = new DataGridView();
+            panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dvgAttStudent).BeginInit();
             SuspendLayout();
+            // 
+            // panel6
+            // 
+            panel6.Controls.Add(lblsSSAtt);
+            panel6.Controls.Add(sltSSAtt);
+            panel6.Controls.Add(dvgAttStudent);
+            panel6.Dock = DockStyle.Fill;
+            panel6.Font = new Font("Tahoma", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            panel6.Location = new Point(0, 0);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(1649, 716);
+            panel6.TabIndex = 0;
             // 
             // lblsSSAtt
             // 
             lblsSSAtt.AutoSize = true;
-            lblsSSAtt.Font = new Font("Century Gothic", 10F, FontStyle.Bold);
-            lblsSSAtt.Location = new Point(208, 132);
+            lblsSSAtt.Font = new Font("Tahoma", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblsSSAtt.ForeColor = Color.RoyalBlue;
+            lblsSSAtt.Location = new Point(59, 118);
             lblsSSAtt.Name = "lblsSSAtt";
-            lblsSSAtt.Size = new Size(156, 19);
-            lblsSSAtt.TabIndex = 13;
+            lblsSSAtt.Size = new Size(199, 28);
+            lblsSSAtt.TabIndex = 16;
             lblsSSAtt.Text = "Attendance Status";
             // 
             // sltSSAtt
             // 
             sltSSAtt.FormattingEnabled = true;
-            sltSSAtt.Location = new Point(208, 166);
+            sltSSAtt.Location = new Point(59, 158);
             sltSSAtt.Name = "sltSSAtt";
-            sltSSAtt.Size = new Size(250, 31);
-            sltSSAtt.TabIndex = 12;
+            sltSSAtt.Size = new Size(250, 36);
+            sltSSAtt.TabIndex = 15;
             // 
             // dvgAttStudent
             // 
@@ -61,59 +76,57 @@
             dvgAttStudent.AllowUserToDeleteRows = false;
             dvgAttStudent.AllowUserToResizeColumns = false;
             dvgAttStudent.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dvgAttStudent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dvgAttStudent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dvgAttStudent.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dvgAttStudent.BackgroundColor = Color.White;
             dvgAttStudent.BorderStyle = BorderStyle.None;
             dvgAttStudent.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dvgAttStudent.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = SystemColors.Window;
-            dataGridViewCellStyle5.Font = new Font("Century Gothic", 9.75F);
-            dataGridViewCellStyle5.ForeColor = Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.InactiveBorder;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dvgAttStudent.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9.75F);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.InactiveBorder;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dvgAttStudent.DefaultCellStyle = dataGridViewCellStyle2;
             dvgAttStudent.GridColor = SystemColors.ActiveCaptionText;
-            dvgAttStudent.Location = new Point(208, 295);
+            dvgAttStudent.Location = new Point(59, 235);
             dvgAttStudent.Name = "dvgAttStudent";
             dvgAttStudent.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.SteelBlue;
-            dataGridViewCellStyle6.Font = new Font("Century Gothic", 9.75F);
-            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dvgAttStudent.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.SteelBlue;
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 9.75F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dvgAttStudent.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dvgAttStudent.RowHeadersWidth = 51;
             dvgAttStudent.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dvgAttStudent.RowTemplate.Height = 26;
             dvgAttStudent.ShowCellErrors = false;
             dvgAttStudent.ShowEditingIcon = false;
             dvgAttStudent.ShowRowErrors = false;
-            dvgAttStudent.Size = new Size(1064, 364);
-            dvgAttStudent.TabIndex = 1;
-            dvgAttStudent.CellContentClick += dvgAttStudent_CellContentClick;
+            dvgAttStudent.Size = new Size(1530, 364);
+            dvgAttStudent.TabIndex = 14;
             // 
             // StudentAttendanceControl
             // 
             AutoScaleDimensions = new SizeF(12F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            Controls.Add(lblsSSAtt);
-            Controls.Add(sltSSAtt);
-            Controls.Add(dvgAttStudent);
+            Controls.Add(panel6);
             Font = new Font("Century Gothic", 12F);
             ForeColor = Color.Black;
             Margin = new Padding(5, 4, 5, 4);
             Name = "StudentAttendanceControl";
-            Size = new Size(1863, 1025);
+            Size = new Size(1649, 716);
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dvgAttStudent).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -125,6 +138,7 @@
         private Panel panel1;
         private Panel panel4;
         private Label label2;
+        private Panel panel6;
         private Label lblsSSAtt;
         private ComboBox sltSSAtt;
         private DataGridView dvgAttStudent;

@@ -161,27 +161,47 @@ namespace Attendance_Management_System.PAL.User_Control
                 return;
             }
 
-            string fname = tbfname.Text;
-            string lname = tbLname.Text;
-            string email = tboxEmail.Text;
-            string pass = tbpassword.Text;
+            string fname = tbfname.Text.Trim();
+            string lname = tbLname.Text.Trim();
+            string email = tboxEmail.Text.Trim();
+            string pass = tbpassword.Text.Trim();
 
             int adminId = 1;
 
-            string phone = tbPhon.Text;
-            string address = textBoxAddress.Text;
+            string phone = tbPhon.Text.Trim();
+            string address = textBoxAddress.Text.Trim();
             char gender = radioButtonMale.Checked ? 'M' : 'F';
 
-            int result = StudentBL.AddStudent(fname, lname, email, pass, groupId, adminId, phone, address, gender);
-            if (result > 0)
+            //int result = StudentBL.AddStudent(fname, lname, email, pass, groupId, adminId, phone, address, gender);
+            //if (result > 0)
+            //{
+            //    MessageBox.Show("Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    ClearInputs();
+            //    RefreshDataGridView();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Failed to Add Data", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+
+            DataTable dt = StudentBL.GetStudentsByEmail(email);
+            if (dt.Rows.Count > 0)
             {
-                MessageBox.Show("Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ClearInputs();
-                RefreshDataGridView();
+                MessageBox.Show("Email already exists", "Failed to add data", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Failed to Add Data", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                int result = StudentBL.AddStudent(fname, lname, email, pass, groupId, adminId, phone, address, gender);
+                if (result > 0)
+                {
+                    MessageBox.Show("Added Sussessfully", "Success Addition", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearInputs();
+                    RefreshDataGridView();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to Add Data", "Failed Addition", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
         }
@@ -255,12 +275,12 @@ namespace Attendance_Management_System.PAL.User_Control
                     MessageBox.Show("Invalid Group ID. Please enter a valid number.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                string fname = tbFN.Text;
-                string lname = tbLN.Text;
-                string email = tbEmail.Text;
-                string pass = tbPass.Text;
-                string phone = tbPhone.Text;
-                string address = tbaddress.Text;
+                string fname = tbFN.Text.Trim();
+                string lname = tbLN.Text.Trim();
+                string email = tbEmail.Text.Trim();
+                string pass = tbPass.Text.Trim();
+                string phone = tbPhone.Text.Trim();
+                string address = tbaddress.Text.Trim();
                 char gender = rbMale.Checked ? 'M' : 'F';
 
                 int groupID;
@@ -488,25 +508,10 @@ namespace Attendance_Management_System.PAL.User_Control
         }
 
 
-
-
-
-
-
-
-
         private void TPSearch_Click(object sender, EventArgs e)
         {
             RefreshDataGridView();
-
-
-
-
-
-
-
         }
-
 
 
     }

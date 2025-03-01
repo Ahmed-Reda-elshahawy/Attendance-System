@@ -140,6 +140,7 @@
             // 
             lblinstructorSelectCF.AutoSize = true;
             lblinstructorSelectCF.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
+            lblinstructorSelectCF.ForeColor = Color.RoyalBlue;
             lblinstructorSelectCF.Location = new Point(45, 303);
             lblinstructorSelectCF.Name = "lblinstructorSelectCF";
             lblinstructorSelectCF.Size = new Size(112, 28);
@@ -150,6 +151,7 @@
             // 
             lblDiscriptionCF.AutoSize = true;
             lblDiscriptionCF.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
+            lblDiscriptionCF.ForeColor = Color.RoyalBlue;
             lblDiscriptionCF.Location = new Point(453, 303);
             lblDiscriptionCF.Name = "lblDiscriptionCF";
             lblDiscriptionCF.Size = new Size(118, 28);
@@ -160,6 +162,7 @@
             // 
             lblnumofSCF.AutoSize = true;
             lblnumofSCF.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
+            lblnumofSCF.ForeColor = Color.RoyalBlue;
             lblnumofSCF.Location = new Point(453, 150);
             lblnumofSCF.Name = "lblnumofSCF";
             lblnumofSCF.Size = new Size(209, 28);
@@ -170,6 +173,7 @@
             // 
             lblGCCF.AutoSize = true;
             lblGCCF.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
+            lblGCCF.ForeColor = Color.RoyalBlue;
             lblGCCF.Location = new Point(45, 150);
             lblGCCF.Name = "lblGCCF";
             lblGCCF.Size = new Size(131, 28);

@@ -1,4 +1,5 @@
 ﻿using Attendance_System.DataAccessLayer;
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -14,89 +15,89 @@ namespace Attendance_System.BusinessLayer
 {
 
     
-        public class StudentBL
+    public class StudentBL
+    {
+
+
+        public static int AddStudent(string fname, string lname, string email, string pass, int classId, int adminId, string phone, string address, char gender)
         {
-
-
-            public static int AddStudent(string fname, string lname, string email, string pass, int classId, int adminId, string phone, string address, char gender)
+            try
             {
-                try
-                {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Student (fname, lname, email, pass, class_id, admin_id, Phone, Address, Gender) VALUES (@fname, @lname, @email, @pass, @classId, @adminId, @phone, @address, @gender);");
-                    cmd.Parameters.AddWithValue("@fname", fname);
-                    cmd.Parameters.AddWithValue("@lname", lname);
-                    cmd.Parameters.AddWithValue("@email", email);
-                    cmd.Parameters.AddWithValue("@pass", pass);
-                    cmd.Parameters.AddWithValue("@classId", classId);
-                    cmd.Parameters.AddWithValue("@adminId", adminId);
-                    cmd.Parameters.AddWithValue("@phone", phone);
-                    cmd.Parameters.AddWithValue("@address", address);
-                    cmd.Parameters.AddWithValue("@gender", gender);
-                    return AttendanceDAL.DML(cmd);
-                }
-                catch (Exception e)
+                SqlCommand cmd = new SqlCommand("INSERT INTO Student (fname, lname, email, pass, class_id, admin_id, Phone, Address, Gender) VALUES (@fname, @lname, @email, @pass, @classId, @adminId, @phone, @address, @gender);");
+                cmd.Parameters.AddWithValue("@fname", fname);
+                cmd.Parameters.AddWithValue("@lname", lname);
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@pass", pass);
+                cmd.Parameters.AddWithValue("@classId", classId);
+                cmd.Parameters.AddWithValue("@adminId", adminId);
+                cmd.Parameters.AddWithValue("@phone", phone);
+                cmd.Parameters.AddWithValue("@address", address);
+                cmd.Parameters.AddWithValue("@gender", gender);
+                return AttendanceDAL.DML(cmd);
+            }
+            catch (Exception e)
 
-                {
-                    Console.WriteLine("Error in AddStudent: " + e.Message);
-                    return -1;
-                }
-
+            {
+                Console.WriteLine("Error in AddStudent: " + e.Message);
+                return -1;
             }
 
-            public static DataTable GetStudents()
-            {
-                try
-                {
-                    SqlCommand cmd = new SqlCommand("SELECT id, fname, lname, email, pass, class_id, admin_id, Phone, Address, Gender FROM Student");
-                    return AttendanceDAL.Select(cmd);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error in GetStudents: " + ex.Message);
-                    return null;
-                }
-            }
+        }
 
-            public static int DeleteStudent(int studentId)
+        public static DataTable GetStudents()
+        {
+            try
             {
-                try
-                {
-                    SqlCommand cmd = new SqlCommand("DELETE FROM Student WHERE id = @studentId");
-                    cmd.Parameters.AddWithValue("@studentId", studentId);
-                    return AttendanceDAL.DML(cmd);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error in DeleteStudent: " + ex.Message);
-                    return -1;
-                }
+                SqlCommand cmd = new SqlCommand("SELECT id, fname, lname, email, pass, class_id, admin_id, Phone, Address, Gender FROM Student");
+                return AttendanceDAL.Select(cmd);
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in GetStudents: " + ex.Message);
+                return null;
+            }
+        }
 
-            public static int UpdateStudent(int studentId, string fname, string lname, string email, string pass, int classId, int adminId, string phone, string address, char gender)
+        public static int DeleteStudent(int studentId)
+        {
+            try
             {
-                try
-                {
-                    SqlCommand cmd = new SqlCommand("UPDATE Student SET fname = @fname, lname = @lname, email = @email, pass = @pass, class_id = @classId, admin_id = @adminId, Phone = @phone, Address = @address, Gender = @gender WHERE id = @studentId");
-                    cmd.Parameters.AddWithValue("@fname", fname);
-                    cmd.Parameters.AddWithValue("@lname", lname);
-                    cmd.Parameters.AddWithValue("@email", email);
-                    cmd.Parameters.AddWithValue("@pass", pass);
-                    cmd.Parameters.AddWithValue("@classId", classId);
-                    cmd.Parameters.AddWithValue("@adminId", adminId);
-                    cmd.Parameters.AddWithValue("@phone", phone);
-                    cmd.Parameters.AddWithValue("@address", address);
-                    cmd.Parameters.AddWithValue("@gender", gender);
-                    cmd.Parameters.AddWithValue("@studentId", studentId);
-                    return AttendanceDAL.DML(cmd);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error in UpdateStudent: " + ex.Message);
-                    return -1;
-                }
+                SqlCommand cmd = new SqlCommand("DELETE FROM Student WHERE id = @studentId");
+                cmd.Parameters.AddWithValue("@studentId", studentId);
+                return AttendanceDAL.DML(cmd);
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in DeleteStudent: " + ex.Message);
+                return -1;
+            }
+        }
+
+        public static int UpdateStudent(int studentId, string fname, string lname, string email, string pass, int classId, int adminId, string phone, string address, char gender)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("UPDATE Student SET fname = @fname, lname = @lname, email = @email, pass = @pass, class_id = @classId, admin_id = @adminId, Phone = @phone, Address = @address, Gender = @gender WHERE id = @studentId");
+                cmd.Parameters.AddWithValue("@fname", fname);
+                cmd.Parameters.AddWithValue("@lname", lname);
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@pass", pass);
+                cmd.Parameters.AddWithValue("@classId", classId);
+                cmd.Parameters.AddWithValue("@adminId", adminId);
+                cmd.Parameters.AddWithValue("@phone", phone);
+                cmd.Parameters.AddWithValue("@address", address);
+                cmd.Parameters.AddWithValue("@gender", gender);
+                cmd.Parameters.AddWithValue("@studentId", studentId);
+                return AttendanceDAL.DML(cmd);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in UpdateStudent: " + ex.Message);
+                return -1;
+            }
+        }
         
-    public static DataTable SearchStudentById(int studentId)
+        public static DataTable SearchStudentById(int studentId)
         {
             try
             {
@@ -154,6 +155,21 @@ namespace Attendance_System.BusinessLayer
                 return null;
             }
         }
+
+        public static DataTable GetStudentDashboardData(int id)
+        {
+            SqlCommand cmd = new SqlCommand("select s.fname+' '+s.lname as SFullName, s.email, s.Phone, s.Address, g.className, i.fname+' '+i.lname as IFullName, g.discription from Student s inner join Groups g on s.class_id = g.id inner join Instructor i on i.id = g.instructor_id where s.id = @ID;");
+            cmd.Parameters.AddWithValue("ID", id);
+            return AttendanceDAL.Select(cmd);
+        }
+
+        public static DataTable GetStudentsByEmail(string email)
+        {
+            SqlCommand cmd = new SqlCommand("select id, fname, lname, email, pass, class_id, Phone, Address, Gender from Student where email = @Email");
+            cmd.Parameters.AddWithValue("@Email", email);
+            return AttendanceDAL.Select(cmd);
+        }
+
     }
  }
 

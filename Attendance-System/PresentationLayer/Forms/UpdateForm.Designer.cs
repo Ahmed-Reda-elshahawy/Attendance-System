@@ -46,7 +46,11 @@
             BackColor = Color.White;
             ClientSize = new Size(881, 632);
             Controls.Add(updateGroupControl1);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            FormBorderStyle = FormBorderStyle.None;
+            MaximizeBox = false;
+            MaximumSize = new Size(881, 632);
+            MinimizeBox = false;
+            MinimumSize = new Size(881, 632);
             Name = "UpdateForm";
             Text = "UpdateForm";
             Load += UpdateForm_Load;

@@ -70,6 +70,7 @@
             // 
             // tabPageMarkAttendance
             // 
+            tabPageMarkAttendance.BackColor = Color.White;
             tabPageMarkAttendance.Controls.Add(txtAtt);
             tabPageMarkAttendance.Controls.Add(save);
             tabPageMarkAttendance.Controls.Add(getAtt);
@@ -90,15 +91,17 @@
             tabPageMarkAttendance.Size = new Size(1466, 640);
             tabPageMarkAttendance.TabIndex = 0;
             tabPageMarkAttendance.Text = "Mark Attendance";
-            tabPageMarkAttendance.UseVisualStyleBackColor = true;
             // 
             // txtAtt
             // 
-            txtAtt.BackColor = Color.FromArgb(224, 224, 224);
+            txtAtt.BackColor = Color.White;
+            txtAtt.BorderStyle = BorderStyle.None;
+            txtAtt.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtAtt.ForeColor = Color.Black;
-            txtAtt.Location = new Point(662, 87);
+            txtAtt.Location = new Point(662, 89);
             txtAtt.Name = "txtAtt";
-            txtAtt.Size = new Size(200, 36);
+            txtAtt.PlaceholderText = "Group";
+            txtAtt.Size = new Size(200, 25);
             txtAtt.TabIndex = 13;
             // 
             // save

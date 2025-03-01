@@ -16,9 +16,10 @@ using System.Windows.Forms;
 
 namespace Attendance_System.Forms
 {
-    
+
     public partial class MainForm : Form
     {
+        private int userId;
         private Form parentForm;
         DashboardControl dashboardControl = new DashboardControl();
         UserControlReportAttendance userControlReportAttendance = new UserControlReportAttendance();
@@ -26,8 +27,9 @@ namespace Attendance_System.Forms
         UserControlRegister instructorControl = new UserControlRegister();
         StudentUserControl studentUserControl = new StudentUserControl();
         GroupControl groupControl = new GroupControl();
-        public MainForm(int userId,Form parent)
+        public MainForm(int userId, Form parent)
         {
+            this.userId = userId;
             parentForm = parent;
             InitializeComponent();
             // Add controls to the form
@@ -59,22 +61,28 @@ namespace Attendance_System.Forms
             dashboardControl.Visible = false;
             instructorControl.Visible = false;
             usercontrolAttendance.Visible = false;
-            groupControl.Visible = false;
-            studentUserControl.Visible = false;
             userControlReportAttendance.Visible = true;
-            userControlReportAttendance.dvgGroupRep.DataSource = ReportBL.getAllAttendance();
+            if (ReportBL.getAllAttendance().Rows.Count > 0)
+            {
+                userControlReportAttendance.dvgGroupRep.DataSource = ReportBL.getAllAttendance();
+
+            }
+            else
+            {
+                userControlReportAttendance.dvgGroupRep.DataSource = null;
+                MessageBox.Show($"No Attendace Found!", "Not Matched", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             userControlReportAttendance.dvgGroupRep.Columns["ID"].Width = 80;
             userControlReportAttendance.dvgGroupRep.Columns["Group"].Width = 100;
             userControlReportAttendance.dvgGroupRep.Columns["Date"].Width = 180;
             userControlReportAttendance.dvgGroupRep.Columns["Status"].Width = 180;
-
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            //// Ensure buttons are wired up correctly
-            //btn_report.Click += btn_report_Click;
-            //btn_dash.Click += btn_dash_Click;
+            admin_name.Text = "Admin";
         }
 
         private void btn_dash_Click(object sender, EventArgs e)
@@ -135,9 +143,28 @@ namespace Attendance_System.Forms
 
         private void btn_logout_Click(object sender, EventArgs e)
         {
-            
-            this.Close();
-            parentForm.Show();
+
+            DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                parentForm.Show();
+            }
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
     }
 }

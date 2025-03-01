@@ -99,7 +99,7 @@
             // 
             // btnVerify
             // 
-            btnVerify.BackColor = Color.FromArgb(67, 3, 125);
+            btnVerify.BackColor = Color.RoyalBlue;
             btnVerify.FlatAppearance.BorderSize = 0;
             btnVerify.FlatStyle = FlatStyle.Flat;
             btnVerify.Font = new Font("Century Gothic", 10F, FontStyle.Bold);

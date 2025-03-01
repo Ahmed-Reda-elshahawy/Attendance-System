@@ -308,9 +308,9 @@ namespace Attendance_System.PresentationLayer.UserControls
 
                 int selectedID = Convert.ToInt32(dgvG.SelectedRows[0].Cells[0].Value);
                 string groupCode = dgvG.SelectedRows[0].Cells[1].Value.ToString();
-                int numStudents = Convert.ToInt32(dgvG.SelectedRows[0].Cells[3].Value);
-                string instructor = dgvG.SelectedRows[0].Cells[4].Value.ToString();
-                string description = dgvG.SelectedRows[0].Cells[5].Value.ToString();
+                int numStudents = Convert.ToInt32(dgvG.SelectedRows[0].Cells[2].Value);
+                string instructor = dgvG.SelectedRows[0].Cells[3].Value.ToString();
+                string description = dgvG.SelectedRows[0].Cells[4].Value.ToString();
 
                 // Open UpdateForm and pass data
                 UpdateForm updateForm = new UpdateForm(selectedID, groupCode, numStudents, instructor, description);

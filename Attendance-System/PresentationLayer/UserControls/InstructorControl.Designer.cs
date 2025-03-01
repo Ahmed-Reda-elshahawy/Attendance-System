@@ -132,6 +132,7 @@
             // 
             // tabPageAddUser
             // 
+            tabPageAddUser.BackColor = Color.White;
             tabPageAddUser.Controls.Add(pb_view);
             tabPageAddUser.Controls.Add(pb_hide);
             tabPageAddUser.Controls.Add(panel12);
@@ -165,8 +166,6 @@
             tabPageAddUser.Size = new Size(1479, 651);
             tabPageAddUser.TabIndex = 0;
             tabPageAddUser.Text = "Add Instructor";
-            tabPageAddUser.UseVisualStyleBackColor = true;
-            tabPageAddUser.Click += tabPageAddStudent_Click;
             // 
             // pb_view
             // 
@@ -214,10 +213,9 @@
             label18.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             label18.Location = new Point(368, 464);
             label18.Name = "label18";
-            label18.Size = new Size(83, 23);
+            label18.Size = new Size(100, 28);
             label18.TabIndex = 0;
             label18.Text = "Address:";
-            label18.Click += label18_Click;
             // 
             // tb_email
             // 
@@ -227,7 +225,7 @@
             tb_email.Location = new Point(376, 282);
             tb_email.Name = "tb_email";
             tb_email.PlaceholderText = "user@gmail.com";
-            tb_email.Size = new Size(282, 23);
+            tb_email.Size = new Size(282, 28);
             tb_email.TabIndex = 0;
             tb_email.Text = "\r\n";
             // 
@@ -238,7 +236,6 @@
             panel11.Name = "panel11";
             panel11.Size = new Size(282, 3);
             panel11.TabIndex = 0;
-            panel11.Paint += panel11_Paint;
             // 
             // label17
             // 
@@ -246,10 +243,9 @@
             label17.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             label17.Location = new Point(372, 254);
             label17.Name = "label17";
-            label17.Size = new Size(62, 23);
+            label17.Size = new Size(74, 28);
             label17.TabIndex = 0;
             label17.Text = "Email:";
-            label17.Click += label17_Click;
             // 
             // panel2
             // 
@@ -265,10 +261,9 @@
             label16.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             label16.Location = new Point(371, 365);
             label16.Name = "label16";
-            label16.Size = new Size(69, 23);
+            label16.Size = new Size(83, 28);
             label16.TabIndex = 0;
             label16.Text = "Phone:";
-            label16.Click += label16_Click;
             // 
             // tb_phone
             // 
@@ -278,7 +273,7 @@
             tb_phone.Location = new Point(380, 394);
             tb_phone.Mask = "+00 000 0000000";
             tb_phone.Name = "tb_phone";
-            tb_phone.Size = new Size(274, 23);
+            tb_phone.Size = new Size(274, 28);
             tb_phone.TabIndex = 0;
             // 
             // panel9
@@ -295,7 +290,7 @@
             tb_password.Font = new Font("Tahoma", 13.8F);
             tb_password.Location = new Point(817, 285);
             tb_password.Name = "tb_password";
-            tb_password.Size = new Size(270, 23);
+            tb_password.Size = new Size(270, 28);
             tb_password.TabIndex = 0;
             tb_password.UseSystemPasswordChar = true;
             // 
@@ -305,7 +300,7 @@
             label15.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             label15.Location = new Point(814, 254);
             label15.Name = "label15";
-            label15.Size = new Size(95, 23);
+            label15.Size = new Size(115, 28);
             label15.TabIndex = 0;
             label15.Text = "Password:";
             // 
@@ -316,7 +311,7 @@
             rd_female.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             rd_female.Location = new Point(916, 395);
             rd_female.Name = "rd_female";
-            rd_female.Size = new Size(88, 27);
+            rd_female.Size = new Size(105, 32);
             rd_female.TabIndex = 0;
             rd_female.TabStop = true;
             rd_female.Text = "Female";
@@ -328,7 +323,7 @@
             rd_male.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             rd_male.Location = new Point(916, 365);
             rd_male.Name = "rd_male";
-            rd_male.Size = new Size(67, 27);
+            rd_male.Size = new Size(80, 32);
             rd_male.TabIndex = 0;
             rd_male.Text = "Male";
             rd_male.UseVisualStyleBackColor = true;
@@ -354,7 +349,7 @@
             label5.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             label5.Location = new Point(817, 365);
             label5.Name = "label5";
-            label5.Size = new Size(79, 23);
+            label5.Size = new Size(93, 28);
             label5.TabIndex = 0;
             label5.Text = "Gender:";
             // 
@@ -380,7 +375,7 @@
             tb_lname.Font = new Font("Tahoma", 13.8F);
             tb_lname.Location = new Point(813, 198);
             tb_lname.Name = "tb_lname";
-            tb_lname.Size = new Size(270, 23);
+            tb_lname.Size = new Size(270, 28);
             tb_lname.TabIndex = 0;
             // 
             // label3
@@ -389,10 +384,9 @@
             label3.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             label3.Location = new Point(814, 167);
             label3.Name = "label3";
-            label3.Size = new Size(105, 23);
+            label3.Size = new Size(126, 28);
             label3.TabIndex = 0;
             label3.Text = "Last Name:";
-            label3.Click += label2_Click;
             // 
             // tb_fname
             // 
@@ -400,7 +394,7 @@
             tb_fname.Font = new Font("Tahoma", 13.8F);
             tb_fname.Location = new Point(375, 198);
             tb_fname.Name = "tb_fname";
-            tb_fname.Size = new Size(270, 23);
+            tb_fname.Size = new Size(270, 28);
             tb_fname.TabIndex = 0;
             // 
             // label2
@@ -409,10 +403,9 @@
             label2.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             label2.Location = new Point(376, 167);
             label2.Name = "label2";
-            label2.Size = new Size(107, 23);
+            label2.Size = new Size(128, 28);
             label2.TabIndex = 0;
             label2.Text = "First Name:";
-            label2.Click += label2_Click;
             // 
             // label1
             // 
@@ -421,13 +414,13 @@
             label1.ForeColor = Color.RoyalBlue;
             label1.Location = new Point(633, 16);
             label1.Name = "label1";
-            label1.Size = new Size(175, 27);
+            label1.Size = new Size(222, 34);
             label1.TabIndex = 0;
             label1.Text = "Add Instructor";
             // 
             // tabPageSearchUser
             // 
-            tabPageSearchUser.BackColor = Color.Transparent;
+            tabPageSearchUser.BackColor = Color.White;
             tabPageSearchUser.Controls.Add(btn_update);
             tabPageSearchUser.Controls.Add(btn_delete);
             tabPageSearchUser.Controls.Add(dgv_instructors);
@@ -559,9 +552,9 @@
             // panel5
             // 
             panel5.BackColor = Color.LightGray;
-            panel5.Location = new Point(38, 180);
+            panel5.Location = new Point(38, 183);
             panel5.Name = "panel5";
-            panel5.Size = new Size(307, 10);
+            panel5.Size = new Size(307, 2);
             panel5.TabIndex = 0;
             // 
             // textBoxSearch
@@ -581,7 +574,7 @@
             label6.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
             label6.Location = new Point(37, 107);
             label6.Name = "label6";
-            label6.Size = new Size(79, 23);
+            label6.Size = new Size(96, 27);
             label6.TabIndex = 0;
             label6.Text = "Search:";
             // 
@@ -592,7 +585,7 @@
             label7.ForeColor = Color.RoyalBlue;
             label7.Location = new Point(721, 13);
             label7.Name = "label7";
-            label7.Size = new Size(88, 27);
+            label7.Size = new Size(112, 34);
             label7.TabIndex = 0;
             label7.Text = "Search";
             // 
@@ -693,7 +686,7 @@
             label4.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             label4.Location = new Point(377, 456);
             label4.Name = "label4";
-            label4.Size = new Size(83, 23);
+            label4.Size = new Size(100, 28);
             label4.TabIndex = 19;
             label4.Text = "Address:";
             // 
@@ -705,7 +698,7 @@
             tb_mail.Location = new Point(385, 274);
             tb_mail.Name = "tb_mail";
             tb_mail.PlaceholderText = "user@gmail.com";
-            tb_mail.Size = new Size(282, 23);
+            tb_mail.Size = new Size(282, 28);
             tb_mail.TabIndex = 18;
             tb_mail.Text = "\r\n";
             // 
@@ -723,7 +716,7 @@
             label8.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             label8.Location = new Point(381, 246);
             label8.Name = "label8";
-            label8.Size = new Size(62, 23);
+            label8.Size = new Size(74, 28);
             label8.TabIndex = 16;
             label8.Text = "Email:";
             // 
@@ -741,7 +734,7 @@
             label10.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             label10.Location = new Point(380, 357);
             label10.Name = "label10";
-            label10.Size = new Size(69, 23);
+            label10.Size = new Size(83, 28);
             label10.TabIndex = 14;
             label10.Text = "Phone:";
             // 
@@ -753,7 +746,7 @@
             tb_ph.Location = new Point(389, 386);
             tb_ph.Mask = "+00 000 0000000";
             tb_ph.Name = "tb_ph";
-            tb_ph.Size = new Size(274, 23);
+            tb_ph.Size = new Size(274, 28);
             tb_ph.TabIndex = 13;
             // 
             // panel10
@@ -770,7 +763,7 @@
             tb_P.Font = new Font("Tahoma", 13.8F);
             tb_P.Location = new Point(826, 277);
             tb_P.Name = "tb_P";
-            tb_P.Size = new Size(270, 23);
+            tb_P.Size = new Size(270, 28);
             tb_P.TabIndex = 11;
             tb_P.UseSystemPasswordChar = true;
             // 
@@ -780,7 +773,7 @@
             label11.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             label11.Location = new Point(823, 246);
             label11.Name = "label11";
-            label11.Size = new Size(95, 23);
+            label11.Size = new Size(115, 28);
             label11.TabIndex = 10;
             label11.Text = "Password:";
             // 
@@ -791,7 +784,7 @@
             female.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             female.Location = new Point(925, 387);
             female.Name = "female";
-            female.Size = new Size(88, 27);
+            female.Size = new Size(105, 32);
             female.TabIndex = 9;
             female.TabStop = true;
             female.Text = "Female";
@@ -803,7 +796,7 @@
             male.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             male.Location = new Point(925, 357);
             male.Name = "male";
-            male.Size = new Size(67, 27);
+            male.Size = new Size(80, 32);
             male.TabIndex = 8;
             male.Text = "Male";
             male.UseVisualStyleBackColor = true;
@@ -829,7 +822,7 @@
             label12.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             label12.Location = new Point(826, 357);
             label12.Name = "label12";
-            label12.Size = new Size(79, 23);
+            label12.Size = new Size(93, 28);
             label12.TabIndex = 6;
             label12.Text = "Gender:";
             // 
@@ -855,7 +848,7 @@
             tb_LN.Font = new Font("Tahoma", 13.8F);
             tb_LN.Location = new Point(822, 190);
             tb_LN.Name = "tb_LN";
-            tb_LN.Size = new Size(270, 23);
+            tb_LN.Size = new Size(270, 28);
             tb_LN.TabIndex = 3;
             // 
             // label13
@@ -864,7 +857,7 @@
             label13.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             label13.Location = new Point(823, 159);
             label13.Name = "label13";
-            label13.Size = new Size(105, 23);
+            label13.Size = new Size(126, 28);
             label13.TabIndex = 2;
             label13.Text = "Last Name:";
             // 
@@ -874,7 +867,7 @@
             tb_FN.Font = new Font("Tahoma", 13.8F);
             tb_FN.Location = new Point(384, 190);
             tb_FN.Name = "tb_FN";
-            tb_FN.Size = new Size(270, 23);
+            tb_FN.Size = new Size(270, 28);
             tb_FN.TabIndex = 21;
             // 
             // label19
@@ -883,7 +876,7 @@
             label19.Font = new Font("Tahoma", 13.8F, FontStyle.Italic);
             label19.Location = new Point(385, 159);
             label19.Name = "label19";
-            label19.Size = new Size(107, 23);
+            label19.Size = new Size(128, 28);
             label19.TabIndex = 22;
             label19.Text = "First Name:";
             // 
@@ -894,10 +887,9 @@
             label14.ForeColor = Color.RoyalBlue;
             label14.Location = new Point(618, 16);
             label14.Name = "label14";
-            label14.Size = new Size(211, 27);
+            label14.Size = new Size(270, 34);
             label14.TabIndex = 0;
             label14.Text = "Update Instructor";
-            label14.Click += label14_Click;
             // 
             // error_provider
             // 
@@ -906,13 +898,13 @@
             // 
             // UserControlRegister
             // 
-            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.White;
             Controls.Add(tabControlInstructor);
             Font = new Font("Century Gothic", 12F);
             ForeColor = Color.RoyalBlue;
-            Margin = new Padding(5, 4, 5, 4);
+            Margin = new Padding(5, 4, 5, 10);
             Name = "UserControlRegister";
             Size = new Size(1487, 692);
             tabControlInstructor.ResumeLayout(false);

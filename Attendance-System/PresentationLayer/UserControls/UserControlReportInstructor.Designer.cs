@@ -77,7 +77,7 @@
             // 
             pictureBoxPrint.Cursor = Cursors.Hand;
             pictureBoxPrint.Image = (Image)resources.GetObject("pictureBoxPrint.Image");
-            pictureBoxPrint.Location = new Point(1414, 8);
+            pictureBoxPrint.Location = new Point(1365, 34);
             pictureBoxPrint.Margin = new Padding(4);
             pictureBoxPrint.Name = "pictureBoxPrint";
             pictureBoxPrint.Size = new Size(52, 53);
@@ -89,7 +89,7 @@
             // panel8
             // 
             panel8.BackColor = Color.Transparent;
-            panel8.Location = new Point(577, 119);
+            panel8.Location = new Point(218, 128);
             panel8.Margin = new Padding(4);
             panel8.Name = "panel8";
             panel8.Size = new Size(200, 3);
@@ -112,7 +112,7 @@
             // 
             viewinsAtt.BackColor = Color.RoyalBlue;
             viewinsAtt.ForeColor = Color.White;
-            viewinsAtt.Location = new Point(1066, 74);
+            viewinsAtt.Location = new Point(891, 76);
             viewinsAtt.Name = "viewinsAtt";
             viewinsAtt.Size = new Size(113, 39);
             viewinsAtt.TabIndex = 31;
@@ -122,10 +122,14 @@
             // 
             // txtGroupRep
             // 
-            txtGroupRep.BackColor = Color.FromArgb(224, 224, 224);
-            txtGroupRep.Location = new Point(756, 76);
+            txtGroupRep.BackColor = Color.White;
+            txtGroupRep.BorderStyle = BorderStyle.None;
+            txtGroupRep.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtGroupRep.ForeColor = Color.Black;
+            txtGroupRep.Location = new Point(650, 78);
             txtGroupRep.Name = "txtGroupRep";
-            txtGroupRep.Size = new Size(204, 35);
+            txtGroupRep.PlaceholderText = "Group";
+            txtGroupRep.Size = new Size(204, 25);
             txtGroupRep.TabIndex = 30;
             // 
             // panel7
@@ -170,7 +174,7 @@
             // 
             pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1414, 8);
+            pictureBox1.Location = new Point(1368, 23);
             pictureBox1.Margin = new Padding(4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(52, 53);
@@ -182,7 +186,7 @@
             // panel6
             // 
             panel6.BackColor = Color.Transparent;
-            panel6.Location = new Point(756, 110);
+            panel6.Location = new Point(649, 110);
             panel6.Margin = new Padding(4);
             panel6.Name = "panel6";
             panel6.Size = new Size(200, 3);
@@ -193,7 +197,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
             label3.ForeColor = Color.RoyalBlue;
-            label3.Location = new Point(661, 87);
+            label3.Location = new Point(554, 83);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(88, 27);
@@ -203,7 +207,7 @@
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.BackColor = Color.LightGray;
-            flowLayoutPanel1.Location = new Point(211, 118);
+            flowLayoutPanel1.Location = new Point(159, 118);
             flowLayoutPanel1.Margin = new Padding(4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(351, 3);
@@ -214,7 +218,7 @@
             panel3.BackColor = Color.Transparent;
             panel3.Controls.Add(panel5);
             panel3.Controls.Add(dtRepGroup);
-            panel3.Location = new Point(199, 83);
+            panel3.Location = new Point(147, 83);
             panel3.Margin = new Padding(4);
             panel3.Name = "panel3";
             panel3.Size = new Size(374, 31);
@@ -273,16 +277,17 @@
             // 
             view1.BackColor = Color.RoyalBlue;
             view1.ForeColor = Color.White;
-            view1.Location = new Point(846, 84);
+            view1.Location = new Point(487, 93);
             view1.Name = "view1";
             view1.Size = new Size(134, 36);
             view1.TabIndex = 32;
             view1.Text = "view";
             view1.UseVisualStyleBackColor = false;
+            view1.Click += view1_Click;
             // 
             // txtStdId
             // 
-            txtStdId.Location = new Point(577, 83);
+            txtStdId.Location = new Point(218, 92);
             txtStdId.Name = "txtStdId";
             txtStdId.Size = new Size(200, 35);
             txtStdId.TabIndex = 31;
@@ -297,6 +302,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.BackColor = Color.White;
             tabPage1.Controls.Add(view1);
             tabPage1.Controls.Add(txtStdId);
             tabPage1.Controls.Add(panel15);
@@ -312,14 +318,13 @@
             tabPage1.Size = new Size(1474, 655);
             tabPage1.TabIndex = 1;
             tabPage1.Text = "Student Report";
-            tabPage1.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
             label5.ForeColor = Color.RoyalBlue;
-            label5.Location = new Point(416, 93);
+            label5.Location = new Point(57, 102);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(129, 27);
@@ -329,7 +334,7 @@
             // panel2
             // 
             panel2.BackColor = Color.Transparent;
-            panel2.Location = new Point(211, 113);
+            panel2.Location = new Point(159, 113);
             panel2.Margin = new Padding(4);
             panel2.Name = "panel2";
             panel2.Size = new Size(351, 13);
@@ -361,7 +366,7 @@
             // 
             panel1.BackColor = Color.Transparent;
             panel1.Controls.Add(panel4);
-            panel1.Location = new Point(211, 73);
+            panel1.Location = new Point(159, 73);
             panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
             panel1.Size = new Size(351, 13);
@@ -369,6 +374,7 @@
             // 
             // tabPageMarkAttendance
             // 
+            tabPageMarkAttendance.BackColor = Color.White;
             tabPageMarkAttendance.Controls.Add(viewinsAtt);
             tabPageMarkAttendance.Controls.Add(txtGroupRep);
             tabPageMarkAttendance.Controls.Add(panel7);
@@ -389,13 +395,13 @@
             tabPageMarkAttendance.Size = new Size(1474, 655);
             tabPageMarkAttendance.TabIndex = 0;
             tabPageMarkAttendance.Text = "Group Report";
-            tabPageMarkAttendance.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold);
-            label2.Location = new Point(115, 87);
+            label2.ForeColor = Color.RoyalBlue;
+            label2.Location = new Point(63, 87);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(71, 27);
@@ -421,6 +427,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             Controls.Add(GroupRep);
             Name = "UserControlReportInstructor";
             Size = new Size(1482, 696);

@@ -21,80 +21,7 @@ namespace Attendance_Management_System.PAL.User_Control
             InitializeComponent();
         }
 
-        private void label16_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel10_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void tabPageAddStudent_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label17_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel11_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void maskedTextBox1_MaskInputRejected_1(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void label18_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
@@ -148,27 +75,35 @@ namespace Attendance_Management_System.PAL.User_Control
                 return;
             }
 
-            string fname = tb_fname.Text;
-            string lname = tb_lname.Text;
-            string email = tb_email.Text;
-            string pass = tb_password.Text;
+            string fname = tb_fname.Text.Trim();
+            string lname = tb_lname.Text.Trim();
+            string email = tb_email.Text.Trim();
+            string pass = tb_password.Text.Trim();
             int adminId = 1;
             string img = "";
-            string phone = tb_phone.Text;
-            string address = tb_address.Text;
+            string phone = tb_phone.Text.Trim();
+            string address = tb_address.Text.Trim();
             char gender = 'F';
             gender = (rd_male.Checked) ? 'M' : 'F';
 
-            int result = InstructorBL.AddInstructor(fname, lname, email, pass, adminId, img, phone, address, gender);
-            if (result > 0)
+            DataTable dt = InstructorBL.GetInstructorsByEmail(email);
+            if (dt.Rows.Count > 0)
             {
-                MessageBox.Show("Added Sussessfully", "Success Addition", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ClearInputs();
-                RefreshDataGridView();
+                MessageBox.Show("Email already exists", "Failed to add data", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Failed to Add Data", "Failed Addition", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                int result = InstructorBL.AddInstructor(fname, lname, email, pass, adminId, img, phone, address, gender);
+                if (result > 0)
+                {
+                    MessageBox.Show("Added Sussessfully", "Success Addition", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearInputs();
+                    RefreshDataGridView();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to Add Data", "Failed Addition", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -350,5 +285,6 @@ namespace Attendance_Management_System.PAL.User_Control
             dv.RowFilter = $"fname like '%{searchTerm}%' or lname like '%{searchTerm}%'";
             dgv_instructors.DataSource = dv.ToTable();
         }
+
     }
 }

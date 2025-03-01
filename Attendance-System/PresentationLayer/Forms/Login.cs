@@ -43,32 +43,6 @@ namespace Attendance_System
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //string email = txtbxLName.Text.Trim();
-            //string password = txtbxLPassword.Text.Trim();
-
-            //if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
-            //{
-            //    labelError.Text = "Please enter both Email and Password.";
-            //    return;
-            //}
-
-            //DataTable result = AuthBL.Login(email, password);
-
-            //if (result?.Rows.Count > 0)
-            //{
-            //    // Successful login
-            //    MessageBox.Show("Login successful!");
-            //    this.Hide();
-            //    // Open the main application form here
-            //    Login mainForm = new Login();
-            //    mainForm.ShowDialog();
-            //    this.Close();
-            //}
-            //else
-            //{
-            //    // Invalid credentials
-            //    labelError.Text = "Invalid Email or Password.";
-            //}
 
             string email = txtbxLName.Text.Trim();
             string password = txtbxLPassword.Text.Trim();
@@ -115,15 +89,13 @@ namespace Attendance_System
                 //----------------------------
                 int userId = Convert.ToInt32(result.Rows[0]["ID"]);
                 string userRole = result.Rows[0]["Role"].ToString();
+                string userName = result.Rows[0]["fname"].ToString();
 
                 Form nextForm = userRole switch
                 {
                     "Admin" => new MainForm(userId,this),
-                    "Instructor" => new InstructorForm(userId,this),
-                    "Student" => new StudentForm(userId,this),
-                    //"Admin" => new MainForm(),
-                    //"Instructor" => new InstructorForm(),
-                    //"Student" => new StudentForm(),
+                    "Instructor" => new InstructorForm(userId, userName, this),
+                    "Student" => new StudentForm(userId, userName, this),
                     _ => null
                 };
 
